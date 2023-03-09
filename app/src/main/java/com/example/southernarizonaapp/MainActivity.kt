@@ -13,6 +13,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.southernarizonaapp.data.Recommendation
+import com.example.southernarizonaapp.ui.SoAzDetailScreen
 import com.example.southernarizonaapp.ui.theme.SouthernArizonaAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -25,8 +27,14 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colors.background
                 ) {
-                    Greeting("Android")
-                        
+                    SoAzDetailScreen(
+                        Recommendation(
+                        image = R.drawable.alejandros_restaurant,
+                        name = "Alejandros Serious Mexican Cuisine",
+                        location =  "7850 N Silverbell Rd Suite 156, Tucson, AZ 85743",
+                        description = "asdhfpisufh piu hpiuwh fpiush pgfiuhaspiuhgpaisuhgp uhgpia ghpia ugpaiu ghpauh gaiuh gpiua g"
+                    )
+                    )
 
                 }
             }
