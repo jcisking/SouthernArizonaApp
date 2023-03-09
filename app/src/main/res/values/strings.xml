@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Southern Arizona App</string>
+    <string name="website_button_text">Go to website</string>
 </resources>
