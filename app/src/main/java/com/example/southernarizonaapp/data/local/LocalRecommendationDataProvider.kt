@@ -45,7 +45,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.mi_nidito,
             name = "Mi Nidito",
             location = "1813 S 4th Ave, Tucson, AZ 85713",
-            description = "",
+            description = ""
         )
 
     )

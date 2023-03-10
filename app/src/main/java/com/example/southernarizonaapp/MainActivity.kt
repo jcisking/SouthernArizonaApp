@@ -22,21 +22,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SouthernArizonaAppTheme {
-                // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colors.background
-                ) {
-                    SoAzDetailScreen(
-                        Recommendation(
-                        image = R.drawable.alejandros_restaurant,
-                        name = "Alejandros Serious Mexican Cuisine",
-                        location =  "7850 N Silverbell Rd Suite 156, Tucson, AZ 85743",
-                        description = "asdhfpisufh piu hpiuwh fpiush pgfiuhaspiuhgpaisuhgp uhgpia ghpia ugpaiu ghpauh gaiuh gpiua g"
-                    )
-                    )
 
-                }
             }
         }
     }
