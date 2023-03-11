@@ -49,4 +49,43 @@ object LocalRecommendationDataProvider {
         )
 
     )
+
+    val recommendedTouristAttractions: List<Recommendation> = listOf(
+        Recommendation(
+            image = R.drawable.oldtucson,
+            name = "Old Tucson",
+            location = "201 Kinney Rd, Tucson, AZ 85735",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.sabino_canyon_recreation_area,
+            name = "Sabino Canyon",
+            location = "5700 N Sabino Canyon Rd, Tucson, AZ 85750",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.trail_dust_town,
+            name = "Trail Dust Town",
+            location = "6541 E Tanque Verde Rd, Tucson, AZ 85715",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.sentinel_peak_a_mountain_pcpl,
+            name = "Sentinel Peak Park (“A” Mountain)",
+            location = "1001 Sentinel Peak Rd S, Tucson, AZ 85745",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.tombstone,
+            name = "Tombstone, Arizona",
+            location = "SouthEastern Arizona",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.mtlemmon,
+            name = "Mount Lemmon",
+            location = "NorthEast Tucson",
+            description = ""
+        )
+    )
 }
