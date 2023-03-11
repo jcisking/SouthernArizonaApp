@@ -88,4 +88,58 @@ object LocalRecommendationDataProvider {
             description = ""
         )
     )
+
+    val recommendedParks: List<Recommendation> = listOf(
+        Recommendation(
+            image = R.drawable.reidpark,
+            name = "Reid Park",
+            location = "900 S. Randolph Way • Tucson AZ 85716",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.brandifenton,
+            name = "Brandi Fenton Park",
+            location = "3482 E River Rd, Tucson, AZ 85718",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.aguacalientepark,
+            name = "Agua Caliente Regional Park",
+            location = "12325 E Roger Rd, Tucson, AZ 85749",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.rillitoriver,
+            name = "Rillito River Park",
+            location = "",
+            description = ""
+        )
+    )
+
+    val recommendedShopping: List<Recommendation> = listOf(
+        Recommendation(
+            image = R.drawable.tucsonmall,
+            name = "Tucson Mall",
+            location = "4500 North Oracle Road, Tucson, Arizona",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.parkplace_homepage_seo_767x510,
+            name = "Park Place Mall",
+            location = "5870 E Broadway Blvd, Tucson, AZ 85711",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.la_encantada_mall,
+            name = "La Encantada Shopping Center",
+            location = "2905 E Skyline Dr, Tucson, AZ 85718",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.tucsonpremiumoutlets,
+            name = "Tucson Premium Outlets",
+            location = "6401 Marana Center Blvd, Tucson, AZ 85742",
+            description = ""
+        )
+    )
 }
