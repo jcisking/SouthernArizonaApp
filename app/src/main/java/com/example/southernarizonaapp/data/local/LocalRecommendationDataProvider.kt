@@ -142,4 +142,43 @@ object LocalRecommendationDataProvider {
             description = ""
         )
     )
+
+    val recommendedResorts: List<Recommendation> = listOf(
+        Recommendation(
+            image = R.drawable.el_conquistador,
+            name = "El Conquistador",
+            location = "10000 N Oracle Rd, Tucson, AZ 85704",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.canyonranch,
+            name = "Canyon Ranch",
+            location = "8600 E Rockcliff Rd, Tucson, AZ 85750",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.loewsventana,
+            name = "Loews Ventana Canyon Resort",
+            location = "7000 N Resort Dr, Tucson, AZ 85750",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.miraval,
+            name = "Miraval Arizona Resort & Spa",
+            location = "5000 East, E Vía Estancia Miraval, Tucson, AZ 85739",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.jwmarriotstarpass,
+            name = "JW Marriott Tucson Starr Pass Resort & Spa",
+            location = "3800 W Starr Pass Blvd, Tucson, AZ 85745",
+            description = ""
+        ),
+        Recommendation(
+            image = R.drawable.casinodelsol,
+            name = "Casino Del Sol",
+            location = "5655 W Valencia Rd, Tucson, AZ 85757",
+            description = ""
+        )
+    )
 }
