@@ -67,37 +67,41 @@ object LocalRecommendationDataProvider {
             image = R.drawable.oldtucson,
             name = "Old Tucson",
             location = "201 Kinney Rd, Tucson, AZ 85735",
-            description = ""
+            description = "Journey into a western town in The Arizona Territory during the 1800s.\n" +
+                    "\n" +
+                    "Experience live-action cowboy gun fights, death-defying stunts, and join the search for the missing gold! Enjoy numerous attractions, rides, and shows for one great price!"
         ),
         Recommendation(
             image = R.drawable.sabino_canyon_recreation_area,
             name = "Sabino Canyon",
             location = "5700 N Sabino Canyon Rd, Tucson, AZ 85750",
-            description = ""
+            description = "Come to Sabino to see water in the desert. Between steep rock cliffs and unique desert vegetation you will find riparian corridors. You may even get lucky and view a Gila Monster, Bobcat, or other animals that are adapt to our 100 + degree summers and mild winters. The Sonoran desert has two rainy seasons: gentle winter rains and a dramatic summer monsoon. Due to winter's snow melt and summer's electrifying lightning storms, Sabino Creek flows almost year around."
         ),
         Recommendation(
             image = R.drawable.trail_dust_town,
             name = "Trail Dust Town",
             location = "6541 E Tanque Verde Rd, Tucson, AZ 85715",
-            description = ""
+            description = "Trail Dust Town has seen Tucson grow up around it since it was built in 1961. A trip down main street still feels like a journey through the streets of a pioneer town. Come escape to a bygone era during your visit to Trail Dust Town."
         ),
         Recommendation(
             image = R.drawable.sentinel_peak_a_mountain_pcpl,
             name = "Sentinel Peak Park (“A” Mountain)",
             location = "1001 Sentinel Peak Rd S, Tucson, AZ 85745",
-            description = ""
+            description = "Below this 2,900-foot peak, the Santa Cruz valley was farmed by the Hohokam Indians as early as 800 AD.  When the Spaniards arrived in the 17th century, the Hohokam had vanished and settlements of Piman people dotted the valley.  One settlement called \"Schuk-Shon,\" meaning \"at the foot of the black mountain,\" was pronounced \"Tuk-Son\" by the Spaniards.  The hill was a lookout for these early Indian and Spanish settlers, who lived in fear of hostile raiders.  The white washed stone \"A\" was constructed by University of Arizona students in 1915."
         ),
         Recommendation(
             image = R.drawable.tombstone,
             name = "Tombstone, Arizona",
             location = "SouthEastern Arizona",
-            description = ""
+            description = "A visit to Tombstone, AZ is like stepping back into history.  Tombstone, AZ otherwise known as the “Town too Tough to Die” is the home of the infamous Gunfight at the OK Corral, Boothill Graveyard and the World Largest Rose Bush.  Tombstone, AZ boasts a mild year round climate, many wonderful shops, gunfight shows, re-enactments and museums.  Our guest can learn Tombstone’s history while taking a scenic ride on a stagecoach or on one of the area’s Trolley’s."
         ),
         Recommendation(
             image = R.drawable.mtlemmon,
             name = "Mount Lemmon",
             location = "NorthEast Tucson",
-            description = ""
+            description = "Visitors to this biodiverse Sky Island are delighted by the hiking, skiing and rock climbing — just an hour from Tucson, Arizona.\n" +
+                    "\n" +
+                    "Mount Lemmon offers an escape from the city for metropolitan Tucsonans. An average of 30 degrees cooler and just an hour away, this special place is a haven in the summer and an outdoor playground in the winter."
         )
     )
 
