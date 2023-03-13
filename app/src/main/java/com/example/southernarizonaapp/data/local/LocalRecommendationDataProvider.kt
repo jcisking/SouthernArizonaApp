@@ -240,25 +240,46 @@ object LocalRecommendationDataProvider {
             image = R.drawable.tucsonmall,
             name = "Tucson Mall",
             location = "4500 North Oracle Road, Tucson, Arizona",
-            description = ""
+            description = "The Tucson Mall is known to be the biggest and most popular mall in " +
+                    "the city. It opened in year of 1982 with total 38 years. Brookfiled " +
+                    "Properties are  management and owners of the property. There are two floor " +
+                    "levels and have about 200 stores in the mall, including restaurants near by. " +
+                    "The major stores include Macy's, Dillard's, JCPenny, Forever 21 and Sears," +
+                    " which are also called the anchors to the shopping mall. There is also a " +
+                    "children's play place which is always full of families and children having a " +
+                    "good time. There is always improvements happening, and openings of new stores " +
+                    "and restaurants that comply with customers preferences."
         ),
         Recommendation(
             image = R.drawable.parkplace_homepage_seo_767x510,
             name = "Park Place Mall",
             location = "5870 E Broadway Blvd, Tucson, AZ 85711",
-            description = ""
+            description = "Park Place Mall offers a great environment for a family. This shopping " +
+                    "center has great stores to shop at and even has great sales as well. The food " +
+                    "court offers great restaurants as well. In my opinion the food court is way " +
+                    "less crowded than the one at Tucson Mall. The theater has awesome service and " +
+                    "offers a clean environment as well."
         ),
         Recommendation(
             image = R.drawable.la_encantada_mall,
             name = "La Encantada Shopping Center",
             location = "2905 E Skyline Dr, Tucson, AZ 85718",
-            description = ""
+            description = "La Encantada is an upscale two-level, outdoor specialty center that" +
+                    " celebrates the splendor of old-world Spanish traditions alongside modern " +
+                    "sophistication. The first and only luxury shopping center in Southern Arizona," +
+                    " La Encantada delivers world-class brands to Tucson, including West Elm, " +
+                    "Crate & Barrel, Tommy Bahama, Free People, Williams Sonoma, lululemon, " +
+                    "Sundance, Anthropologie, Apple Store, and Tiffany & Co."
         ),
         Recommendation(
             image = R.drawable.tucsonpremiumoutlets,
             name = "Tucson Premium Outlets",
             location = "6401 Marana Center Blvd, Tucson, AZ 85742",
-            description = ""
+            description = "Even though Tucson gets Hot, no not hot, Extremely Hot, the outlets know" +
+                    " how to keep customers cool! Both an inside and outside, the outlets find ways " +
+                    "to keep the customers cool. The variety of outlet stores is wonderful! Yes, " +
+                    "there are outlets in many places. The Tucson Premium Outlets are right up " +
+                    "there in the best! It's worth visiting whilst in the Tucson Area."
         )
     )
 
