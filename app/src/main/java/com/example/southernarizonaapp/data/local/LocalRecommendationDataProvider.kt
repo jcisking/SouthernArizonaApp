@@ -297,37 +297,83 @@ object LocalRecommendationDataProvider {
             image = R.drawable.el_conquistador,
             name = "El Conquistador",
             location = "10000 N Oracle Rd, Tucson, AZ 85704",
-            description = ""
+            description = "When you think of the Southwest, windswept mountains, wildflowers, " +
+                    "fiery-red sunsets and a deep-rooted desert culture spring to mind and nowhere " +
+                    "is this soul-stirring tableau captured more spectacularly than at the El " +
+                    "Conquistador Tucson. Let us surprise you with the pristine beauty of the " +
+                    "Sonoran Desert, introduce you to indigenous cultures, and inspire you with " +
+                    "authentic flavors, experiences and unforgettable moments. " +
+                    "Named \"Best Experiential Hotel\" by Hotel Interactive ® Lodging Industry " +
+                    "Elite Awards and recognized as a Top 52 Hilton Hotel by Forbes, El " +
+                    "Conquistador Tucson invites you to escape and experience the colors, textures, " +
+                    "and singular details of our uniquely Southwest resort."
         ),
         Recommendation(
             image = R.drawable.canyonranch,
             name = "Canyon Ranch",
             location = "8600 E Rockcliff Rd, Tucson, AZ 85750",
-            description = ""
+            description = "Introducing the desert vacation that renews and inspires you. Relax and " +
+                    "reboot with a wide variety of unique service and treatment options offered " +
+                    "each week. Stretch your hamstrings and your comfort zone in an aerial yoga " +
+                    "class, or with an ashiatsu massage. Inch your soul toward something new – " +
+                    "trade in dieting for vibrant, conscious eating and set your alarm for a Sonoran " +
+                    "Desert sunrise. At Canyon Ranch wellness resort, we have experts in every" +
+                    " facet of wellness to help you create a healthy living plan. Whatever your " +
+                    "purpose for visiting, we’ll guide you on your path."
         ),
         Recommendation(
             image = R.drawable.loewsventana,
             name = "Loews Ventana Canyon Resort",
             location = "7000 N Resort Dr, Tucson, AZ 85750",
-            description = ""
+            description = "Tucson’s spectacular ‘Ventana’ or ‘Window’ to the Soul of the Sonoran " +
+                    "desert--- is Loews Ventana Canyon Resort.   Discover a magical perspective high " +
+                    "above Tucson’s Catalina Mountains, where this stunning natural retreat offers " +
+                    "a variety of activities, signature services and experiences to relax, energize" +
+                    " and inspire guests. A playground of visitor delights includes:  the luxurious " +
+                    "Lakeside Spa & Tennis Center; Canyon hiking; professional stargazing; 2 Tom " +
+                    "Fazio-designed PGA golf courses and lighted tennis courts; 2 swimming pools; a " +
+                    "fitness center; nearby riding trails and more. Relax in the comfortable " +
+                    "elegance of one of our 398 spacious guest rooms, including 26 suites.  Each" +
+                    " features a private viewing balcony, over-sized tub, and breathtaking views of " +
+                    "the desert mountains and night sky."
         ),
         Recommendation(
             image = R.drawable.miraval,
             name = "Miraval Arizona Resort & Spa",
             location = "5000 East, E Vía Estancia Miraval, Tucson, AZ 85739",
-            description = ""
+            description = "Miraval is a global leader in well-being resorts and spas. Opened in " +
+                    "1995, Miraval Arizona pioneered the destination well-being spa resort category " +
+                    "with its comprehensive program of activities, experiences, and personal " +
+                    "treatments. Miraval’s core is mindfulness, and its motto, “life is better when" +
+                    " in balance”, guides each visit. Activities include fitness, meditation, yoga, " +
+                    "well-being, equine, hiking, biking, and metaphysical exploration."
         ),
         Recommendation(
             image = R.drawable.jwmarriotstarpass,
             name = "JW Marriott Tucson Starr Pass Resort & Spa",
             location = "3800 W Starr Pass Blvd, Tucson, AZ 85745",
-            description = ""
+            description = "JW Marriott Tucson Starr Pass Resort & Spa offers uncomplicated relaxation" +
+                    " amid the city's most compelling attractions. Hike and bike on spectacular " +
+                    "trails of Tuscon, AZ, or explore the Arizona-Sonora Desert Museum, Kino Sports " +
+                    "complex, and Old Tucson Studios. Test your swing on the Arnold Palmer-designed " +
+                    "desert golf courses, pamper yourself at our spa or take a dip in our multi-level" +
+                    " pool and lazy river. Whatever your reason for visiting, we want to make your stay" +
+                    " memorable at JW Marriott Tucson Starr Pass Resort & Spa."
         ),
         Recommendation(
             image = R.drawable.casinodelsol,
             name = "Casino Del Sol",
             location = "5655 W Valencia Rd, Tucson, AZ 85757",
-            description = ""
+            description = "Casino Del Sol, Spa and Conference Center is just 15 minutes from Tucson " +
+                    "International Airport and downtown, you’ll discover The Sol of Tucson—Casino " +
+                    "Del Sol. An oasis nestled in the secluded mesquites of the high Sonoran Desert. " +
+                    "Our gracious and welcoming casino resort is a successive five-time recipient of" +
+                    " a AAA Four-Diamond rating, and TripAdvisor’s Certificate of Excellence. " +
+                    "Includes: *Hiapsi Spa and Fitness Center, *Prema Lobby Lounge, *Festa " +
+                    "International Buffet,*PY Steakhouse, *Ume Asian Cuisine Sushi Restaurant, " +
+                    "*Bellissimo Ristorante Italiano, *Two pools; one with expansive area featuring" +
+                    " the Oasis Pool Bar and other with a fun slide, *High Limit Lounge, " +
+                    "*Covered parking garage, *Various other restaurants."
         )
     )
 }
