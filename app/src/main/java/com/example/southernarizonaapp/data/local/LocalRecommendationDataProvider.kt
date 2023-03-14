@@ -125,6 +125,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.oldtucson,
             name = "Old Tucson",
             location = "201 Kinney Rd, Tucson, AZ 85735",
+            category = Category.TOURIST_ATTRACTIONS,
             description = "Journey into a western town in The Arizona Territory during the 1800s.\n" +
                     "\n" +
                     "Experience live-action cowboy gun fights, death-defying stunts, and join the " +
@@ -135,6 +136,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.sabino_canyon_recreation_area,
             name = "Sabino Canyon",
             location = "5700 N Sabino Canyon Rd, Tucson, AZ 85750",
+            category = Category.TOURIST_ATTRACTIONS,
             description = "Come to Sabino to see water in the desert. Between steep rock cliffs " +
                     "and unique desert vegetation you will find riparian corridors. You may even " +
                     "get lucky and view a Gila Monster, Bobcat, or other animals that are adapt to" +
@@ -147,6 +149,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.trail_dust_town,
             name = "Trail Dust Town",
             location = "6541 E Tanque Verde Rd, Tucson, AZ 85715",
+            category = Category.TOURIST_ATTRACTIONS,
             description = "Trail Dust Town has seen Tucson grow up around it since it was built " +
                     "in 1961. A trip down main street still feels like a journey through the " +
                     "streets of a pioneer town. Come escape to a bygone era during your visit to " +
@@ -156,6 +159,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.sentinel_peak_a_mountain_pcpl,
             name = "Sentinel Peak Park (“A” Mountain)",
             location = "1001 Sentinel Peak Rd S, Tucson, AZ 85745",
+            category = Category.TOURIST_ATTRACTIONS,
             description = "Below this 2,900-foot peak, the Santa Cruz valley was farmed by the" +
                     " Hohokam Indians as early as 800 AD.  When the Spaniards arrived in the 17th " +
                     "century, the Hohokam had vanished and settlements of Piman people dotted the " +
@@ -169,6 +173,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.tombstone,
             name = "Tombstone, Arizona",
             location = "SouthEastern Arizona",
+            category = Category.TOURIST_ATTRACTIONS,
             description = "A visit to Tombstone, AZ is like stepping back into history.  " +
                     "Tombstone, AZ otherwise known as the “Town too Tough to Die” is the home " +
                     "of the infamous Gunfight at the OK Corral, Boothill Graveyard and the World " +
@@ -181,6 +186,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.mtlemmon,
             name = "Mount Lemmon",
             location = "NorthEast Tucson",
+            category = Category.TOURIST_ATTRACTIONS,
             description = "Visitors to this biodiverse Sky Island are delighted by the hiking, " +
                     "skiing and rock climbing — just an hour from Tucson, Arizona.\n" +
                     "\n" +
@@ -195,6 +201,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.reidpark,
             name = "Reid Park",
             location = "900 S. Randolph Way • Tucson AZ 85716",
+            category = Category.PARKS,
             description = "This large park has something for everyone. Horseshoe pitching complex," +
                     " ponds with ducks to feed, playgrounds for kids of all ages, picnic pavilions, " +
                     "walking/running/cycling paths, public washrooms, zoo, etc. If you want to be " +
@@ -204,6 +211,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.brandifenton,
             name = "Brandi Fenton Park",
             location = "3482 E River Rd, Tucson, AZ 85718",
+            category = Category.PARKS,
             description = "Brandi Fenton Memorial Park is a 56-acre park in North-Central Tucson. " +
                     "The park includes three soccer fields, two covered basketball courts, five " +
                     "ramadas, an equestrian arena, horse shoe pits, two playgrounds, a splash park, " +
@@ -217,6 +225,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.aguacalientepark,
             name = "Agua Caliente Regional Park",
             location = "12325 E Roger Rd, Tucson, AZ 85749",
+            category = Category.PARKS,
             description = "Agua Caliente, literally meaning hot water, is a unique 101-acre park " +
                     "that features a perennial warm spring and pond that is home to an " +
                     "exceptionally rich mix of plants and animals. Agua Caliente Park has a long " +
@@ -231,6 +240,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.himmel_park_tucson,
             name = "Himmel Park",
             location = "1000 N Tucson Blvd, Tucson, AZ 85716",
+            category = Category.PARKS,
             description = "Located on the east side of Tucson Boulevard, half a block south of " +
                     "Speedway Boulevard, Himmel Park contains a cozy library, whimsical " +
                     "playgrounds, numerous tennis courts, and a swimming pool. A wide, tree-lined" +
@@ -249,6 +259,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.tucsonmall,
             name = "Tucson Mall",
             location = "4500 North Oracle Road, Tucson, Arizona",
+            category = Category.SHOPPING,
             description = "The Tucson Mall is known to be the biggest and most popular mall in " +
                     "the city. It opened in year of 1982 with total 38 years. Brookfiled " +
                     "Properties are  management and owners of the property. There are two floor " +
@@ -263,6 +274,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.parkplace_homepage_seo_767x510,
             name = "Park Place Mall",
             location = "5870 E Broadway Blvd, Tucson, AZ 85711",
+            category = Category.SHOPPING,
             description = "Park Place Mall offers a great environment for a family. This shopping " +
                     "center has great stores to shop at and even has great sales as well. The food " +
                     "court offers great restaurants as well. In my opinion the food court is way " +
@@ -273,6 +285,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.la_encantada_mall,
             name = "La Encantada Shopping Center",
             location = "2905 E Skyline Dr, Tucson, AZ 85718",
+            category = Category.SHOPPING,
             description = "La Encantada is an upscale two-level, outdoor specialty center that" +
                     " celebrates the splendor of old-world Spanish traditions alongside modern " +
                     "sophistication. The first and only luxury shopping center in Southern Arizona," +
@@ -284,6 +297,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.tucsonpremiumoutlets,
             name = "Tucson Premium Outlets",
             location = "6401 Marana Center Blvd, Tucson, AZ 85742",
+            category = Category.SHOPPING,
             description = "Even though Tucson gets Hot, no not hot, Extremely Hot, the outlets know" +
                     " how to keep customers cool! Both an inside and outside, the outlets find ways " +
                     "to keep the customers cool. The variety of outlet stores is wonderful! Yes, " +
@@ -297,6 +311,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.el_conquistador,
             name = "El Conquistador",
             location = "10000 N Oracle Rd, Tucson, AZ 85704",
+            category = Category.RESORTS,
             description = "When you think of the Southwest, windswept mountains, wildflowers, " +
                     "fiery-red sunsets and a deep-rooted desert culture spring to mind and nowhere " +
                     "is this soul-stirring tableau captured more spectacularly than at the El " +
@@ -312,6 +327,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.canyonranch,
             name = "Canyon Ranch",
             location = "8600 E Rockcliff Rd, Tucson, AZ 85750",
+            category = Category.RESORTS,
             description = "Introducing the desert vacation that renews and inspires you. Relax and " +
                     "reboot with a wide variety of unique service and treatment options offered " +
                     "each week. Stretch your hamstrings and your comfort zone in an aerial yoga " +
@@ -325,6 +341,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.loewsventana,
             name = "Loews Ventana Canyon Resort",
             location = "7000 N Resort Dr, Tucson, AZ 85750",
+            category = Category.RESORTS,
             description = "Tucson’s spectacular ‘Ventana’ or ‘Window’ to the Soul of the Sonoran " +
                     "desert--- is Loews Ventana Canyon Resort.   Discover a magical perspective high " +
                     "above Tucson’s Catalina Mountains, where this stunning natural retreat offers " +
@@ -341,6 +358,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.miraval,
             name = "Miraval Arizona Resort & Spa",
             location = "5000 East, E Vía Estancia Miraval, Tucson, AZ 85739",
+            category = Category.RESORTS,
             description = "Miraval is a global leader in well-being resorts and spas. Opened in " +
                     "1995, Miraval Arizona pioneered the destination well-being spa resort category " +
                     "with its comprehensive program of activities, experiences, and personal " +
@@ -352,6 +370,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.jwmarriotstarpass,
             name = "JW Marriott Tucson Starr Pass Resort & Spa",
             location = "3800 W Starr Pass Blvd, Tucson, AZ 85745",
+            category = Category.RESORTS,
             description = "JW Marriott Tucson Starr Pass Resort & Spa offers uncomplicated relaxation" +
                     " amid the city's most compelling attractions. Hike and bike on spectacular " +
                     "trails of Tuscon, AZ, or explore the Arizona-Sonora Desert Museum, Kino Sports " +
@@ -364,6 +383,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.casinodelsol,
             name = "Casino Del Sol",
             location = "5655 W Valencia Rd, Tucson, AZ 85757",
+            category = Category.RESORTS,
             description = "Casino Del Sol, Spa and Conference Center is just 15 minutes from Tucson " +
                     "International Airport and downtown, you’ll discover The Sol of Tucson—Casino " +
                     "Del Sol. An oasis nestled in the secluded mesquites of the high Sonoran Desert. " +
