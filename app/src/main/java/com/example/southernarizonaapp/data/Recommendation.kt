@@ -7,5 +7,5 @@ data class Recommendation(
     val name: String,
     val location: String,
     val description: String,
-    val recommendationType: RecommendationType
+    val category: Category
 )

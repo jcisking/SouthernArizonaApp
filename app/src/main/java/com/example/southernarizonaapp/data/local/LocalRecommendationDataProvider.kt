@@ -2,7 +2,7 @@ package com.example.southernarizonaapp.data.local
 
 import com.example.southernarizonaapp.R
 import com.example.southernarizonaapp.data.Recommendation
-import com.example.southernarizonaapp.data.RecommendationType
+import com.example.southernarizonaapp.data.Category
 
 object LocalRecommendationDataProvider {
     val restaurantRecommendations: List<Recommendation> = listOf(
@@ -10,7 +10,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.alejandros_restaurant,
             name = "Alejandro “Serious Mexican, Mariscos, & Fusion Food”",
             location = "7850 N Silverbell Rd Suite 156, Tucson, AZ 85743",
-            recommendationType = RecommendationType.RESTAURANTS,
+            category = Category.RESTAURANTS,
             description = "You will find that many of our dishes are named after family members as" +
                     " a reminder and celebration of life. I am grateful for the opportunity to share" +
                     " our story and our food which itself contains years of history through family" +
@@ -28,7 +28,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.el_charro,
             name = "El Charro",
             location = "311 N Court Ave, Tucson, AZ 85701",
-            recommendationType = RecommendationType.RESTAURANTS,
+            category = Category.RESTAURANTS,
             description = "Our Legendary Tia Monica Flin, is well-known as “The Inventor of The " +
                     "Chimichanga.” While frying her now famous El Charro ground beef tacos, she " +
                     "accidentally dropped a burro into the frying pan and when the oil splashed up " +
@@ -41,7 +41,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.theparishrestaurant,
             name = "The Parish",
             location = "6453 N Oracle Rd, Tucson, AZ 85704",
-            recommendationType = RecommendationType.RESTAURANTS,
+            category = Category.RESTAURANTS,
             description = "The Parish is a favorite Tucson restaurant for those seeking a unique " +
                     "and flavorful dining experience. Dine with true Southern hospitality under " +
                     "glass chandeliers and in rustic table settings that ooze Southern charm. " +
@@ -58,7 +58,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.tf_renees_organic_oven_interior_2847,
             name = "Renee's Tucson" ,
             location = "7065 E Tanque Verde Rd, Tucson, AZ 85715",
-            recommendationType = RecommendationType.RESTAURANTS,
+            category = Category.RESTAURANTS,
             description = "Compact eatery serving a diverse menu of organic dishes, including" +
                     " gluten-free pizza & vegan items. Renee’s taste for purity in every ingredient" +
                     " and her appreciation for a great dining experience have earned this intimate " +
@@ -69,7 +69,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.tf_aqui_con_el_nene_sonoran_hot_dogs_5464,
             name = "Aqui Con El Nene",
             location = "4415 N Flowing Wells Rd, Tucson, AZ 85705",
-            recommendationType = RecommendationType.RESTAURANTS,
+            category = Category.RESTAURANTS,
             description = "This west-side food truck won Best Tacos in Tucson during the recent " +
                     "Mero Mero Taquero competition, and if you've ever had the green chile-strewn " +
                     "Taco Yaqui you can see why. Another menu highlight is the baked potato " +
@@ -81,7 +81,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.tf_tito_and_pep_pollo_asado_8650,
             name = "Tito and Pep",
             location = "4122 E Speedway Blvd, Tucson, AZ 85712",
-            recommendationType = RecommendationType.RESTAURANTS,
+            category = Category.RESTAURANTS,
             description = "Tito & Pep is a bright venue in Midtown Tucson providing delicious food " +
                     "and beverage and exceptional service in a convivial, upbeat atmosphere. \n" +
                     "\n" +
@@ -100,7 +100,7 @@ object LocalRecommendationDataProvider {
             image = R.drawable.mi_nidito,
             name = "Mi Nidito",
             location = "1813 S 4th Ave, Tucson, AZ 85713",
-            recommendationType = RecommendationType.RESTAURANTS,
+            category = Category.RESTAURANTS,
             description = "Mi Nidito has been serving Tucson since 1952. It was then that a couple " +
                     "who moved from Sonora made a decision that is still impacting the lives of " +
                     "their family three generations later. The decision was between opening a " +
