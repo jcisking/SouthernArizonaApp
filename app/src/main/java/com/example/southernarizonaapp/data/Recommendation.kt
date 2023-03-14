@@ -6,5 +6,6 @@ data class Recommendation(
     @DrawableRes val image: Int,
     val name: String,
     val location: String,
-    val description: String
+    val description: String,
+    val recommendationType: RecommendationType
 )
