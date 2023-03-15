@@ -24,7 +24,9 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SouthernArizonaAppTheme {
-                SoAzRecommendationListScreen(recommendations = LocalRecommendationDataProvider.restaurantRecommendations)
+                SoAzRecommendationListScreen(
+                    recommendations = LocalRecommendationDataProvider.restaurantRecommendations
+                )
             }
         }
     }
