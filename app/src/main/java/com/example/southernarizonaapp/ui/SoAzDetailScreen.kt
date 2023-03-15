@@ -95,9 +95,6 @@ fun RecommendationLocation(
 }
 
 
-
-
-
 @Preview
 @Composable
 fun SoAzDetailScreen() {

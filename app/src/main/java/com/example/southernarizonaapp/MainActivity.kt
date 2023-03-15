@@ -14,7 +14,9 @@ import androidx.compose.ui.platform.LocalUriHandler
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.southernarizonaapp.data.Recommendation
+import com.example.southernarizonaapp.data.local.LocalRecommendationDataProvider
 import com.example.southernarizonaapp.ui.SoAzDetailScreen
+import com.example.southernarizonaapp.ui.SoAzRecommendationListScreen
 import com.example.southernarizonaapp.ui.theme.SouthernArizonaAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -22,7 +24,7 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             SouthernArizonaAppTheme {
-
+                SoAzRecommendationListScreen(recommendations = LocalRecommendationDataProvider.restaurantRecommendations)
             }
         }
     }
