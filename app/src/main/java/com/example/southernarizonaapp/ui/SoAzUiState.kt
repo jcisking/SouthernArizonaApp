@@ -6,5 +6,6 @@ import com.example.southernarizonaapp.data.Recommendation
 data class SoAzUiState(
     val currentCategory: Category,
     val currentRecommendation: Recommendation,
-    val isShowingDetailsScreen: Boolean
+    val isShowingCategoryScreen: Boolean,
+
 )
