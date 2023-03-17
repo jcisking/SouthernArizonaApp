@@ -5,7 +5,7 @@ import com.example.southernarizonaapp.data.Recommendation
 import com.example.southernarizonaapp.data.Category
 
 object LocalRecommendationDataProvider {
-    val restaurantRecommendations: List<Recommendation> = listOf(
+    val allRecommendations: List<Recommendation> = listOf(
         Recommendation(
             image = R.drawable.alejandros_restaurant,
             name = "Alejandro “Serious Mexican, Mariscos, & Fusion Food”",
@@ -116,11 +116,7 @@ object LocalRecommendationDataProvider {
                     "Over the years that coziness has remained, as Mi Nidito has gone through a " +
                     "number of renovations. Busy weekends and a growing clientele prompted the most " +
                     "recent expansion, completed in 1992, giving the restaurant 35 additional seats."
-        )
-
-    )
-
-    val recommendedTouristAttractions: List<Recommendation> = listOf(
+        ),
         Recommendation(
             image = R.drawable.oldtucson,
             name = "Old Tucson",
@@ -193,10 +189,7 @@ object LocalRecommendationDataProvider {
                     "Mount Lemmon offers an escape from the city for metropolitan Tucsonans. An" +
                     " average of 30 degrees cooler and just an hour away, this special place is a " +
                     "haven in the summer and an outdoor playground in the winter."
-        )
-    )
-
-    val recommendedParks: List<Recommendation> = listOf(
+        ),
         Recommendation(
             image = R.drawable.reidpark,
             name = "Reid Park",
@@ -251,10 +244,7 @@ object LocalRecommendationDataProvider {
                     "of the park that is used as a natural amphitheater for local productions. In " +
                     "addition, the park is used by various recreational sport leagues since it has" +
                     " four soccer fields, numerous baseball/softball fields, and a 1/2 basketball court. "
-        )
-    )
-
-    val recommendedShopping: List<Recommendation> = listOf(
+        ),
         Recommendation(
             image = R.drawable.tucsonmall,
             name = "Tucson Mall",
@@ -303,10 +293,7 @@ object LocalRecommendationDataProvider {
                     "to keep the customers cool. The variety of outlet stores is wonderful! Yes, " +
                     "there are outlets in many places. The Tucson Premium Outlets are right up " +
                     "there in the best! It's worth visiting whilst in the Tucson Area."
-        )
-    )
-
-    val recommendedResorts: List<Recommendation> = listOf(
+        ),
         Recommendation(
             image = R.drawable.el_conquistador,
             name = "El Conquistador",
@@ -395,5 +382,7 @@ object LocalRecommendationDataProvider {
                     " the Oasis Pool Bar and other with a fun slide, *High Limit Lounge, " +
                     "*Covered parking garage, *Various other restaurants."
         )
+
     )
+
 }
