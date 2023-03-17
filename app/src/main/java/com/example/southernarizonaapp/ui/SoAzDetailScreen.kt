@@ -95,11 +95,11 @@ fun RecommendationLocation(
 }
 
 
-@Preview
-@Composable
-fun SoAzDetailScreen() {
-    SouthernArizonaAppTheme {
-        SoAzDetailScreen(recommendation = LocalRecommendationDataProvider.restaurantRecommendations[0]
-        )
-    }
-}
+//@Preview
+//@Composable
+//fun SoAzDetailScreen() {
+//    SouthernArizonaAppTheme {
+//        SoAzDetailScreen(recommendation = LocalRecommendationDataProvider.restaurantRecommendations[0]
+//        )
+//    }
+//}

@@ -71,14 +71,14 @@ fun RecommendationListScreenTopBar(
 }
 
 
-@Preview
-@Composable
-fun RecommendationListScreenPreview() {
-    SouthernArizonaAppTheme() {
-        SoAzRecommendationListScreen(
-            recommendations = LocalRecommendationDataProvider.restaurantRecommendations,
-            onBackButtonClicked = {},
-            uiState = SoAzUiState()
-        )
-    }
-}
+//@Preview
+//@Composable
+//fun RecommendationListScreenPreview() {
+//    SouthernArizonaAppTheme() {
+//        SoAzRecommendationListScreen(
+//            recommendations = LocalRecommendationDataProvider.restaurantRecommendations,
+//            onBackButtonClicked = {},
+//            uiState = SoAzUiState()
+//        )
+//    }
+//}
