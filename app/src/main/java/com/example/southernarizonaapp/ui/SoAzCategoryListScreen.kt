@@ -10,6 +10,8 @@ import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import com.example.southernarizonaapp.data.Category
 
 @Composable
@@ -33,7 +35,7 @@ fun CategoryListItem(
 ) {
     Card(modifier = modifier) {
         Row {
-            Image(painter =, contentDescription =)
+            Image(painter = painterResource(id = category.image), contentDescription = null)
             Text(text = category.displayName)
         }
 
