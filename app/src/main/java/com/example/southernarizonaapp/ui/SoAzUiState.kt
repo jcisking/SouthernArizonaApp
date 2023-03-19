@@ -4,10 +4,11 @@ import com.example.southernarizonaapp.data.Category
 import com.example.southernarizonaapp.data.Recommendation
 
 data class SoAzUiState(
-    val currentCategory: Category,
-    val currentRecommendation: Recommendation,
-    val isShowingCategoryScreen: Boolean,
-    val categories: Map<Category, List<Recommendation>>,
+    val currentCategory: Category? = null,
+    val currentRecommendation: Recommendation? = null,
+    val isShowingCategoryScreen: Boolean = true,
+    val isShowingRecommendationScreen: Boolean = false,
+    val categories: Map<Category, List<Recommendation>> = emptyMap(),
 ) {
-    val currentRecommendations: List<Recommendation> by lazy {categories[currentCategory]!!}
+    val currentRecommendationList: List<Recommendation> by lazy {categories[currentCategory]!!}
 }
