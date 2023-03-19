@@ -11,17 +11,16 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import com.example.southernarizonaapp.data.Category
 
 @Composable
-fun CategoryListScreen(
+fun SoAzCategoryListScreen(
     categories: List<Category>
 ) {
-    Scaffold() {
-        LazyColumn(modifier = Modifier.padding(it)) {
-            items(categories) {
-                CategoryListItem(it)
+    Scaffold() { paddingValues ->
+        LazyColumn(modifier = Modifier.padding(paddingValues)) {
+            items(categories) { category ->
+                CategoryListItem(category)
 
             }
         }
