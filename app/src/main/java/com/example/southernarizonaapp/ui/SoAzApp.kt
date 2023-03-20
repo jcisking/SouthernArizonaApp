@@ -1,8 +1,10 @@
 package com.example.southernarizonaapp.ui
 
+import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Modifier
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -11,7 +13,10 @@ import com.example.southernarizonaapp.data.SoAzScreen
 
 
 @Composable
-fun SoAzApp() {
+fun SoAzApp(
+    windowSize: WindowWidthSizeClass,
+    modifier: Modifier = Modifier
+) {
     val navController = rememberNavController()
     val viewModel: SoAzViewModel = viewModel()
     val uiState by viewModel.uiState.collectAsState()
@@ -22,7 +27,8 @@ fun SoAzApp() {
     ) {
         composable(route = SoAzScreen.ListDetailRoute.name) {
             SoAzListDetailScreen(
-                uiState = uiState
+                uiState = uiState,
+                windowSize = windowSize
             )
         }
 
