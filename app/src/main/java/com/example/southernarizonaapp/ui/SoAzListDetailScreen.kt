@@ -62,7 +62,6 @@ fun SoAzListDetailScreen(
                     SoAzDetailScreen(recommendation = /*TODO*/)
                 }
                 NavigationBar() {
-
                 }
             }
         }
