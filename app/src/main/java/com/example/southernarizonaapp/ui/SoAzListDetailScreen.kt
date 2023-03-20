@@ -1,7 +1,9 @@
 package com.example.southernarizonaapp.ui
 
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationRail
 import androidx.compose.material3.PermanentNavigationDrawer
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
@@ -16,13 +18,14 @@ fun SoAzListDetailScreen(
     modifier: Modifier = Modifier
 ) {
     when (windowSize) {
+
         WindowWidthSizeClass.Expanded -> {
             PermanentNavigationDrawer(drawerContent = { /*TODO*/ }) {
                 if (uiState.currentCategory == null) {
                     SoAzPlaceHolderScreen()
+                } else {
+                    SoAzListAndDetailScreen()
                 }
-                else SoAzListAndDetailScreen()
-                
             }
         }
 
@@ -33,30 +36,36 @@ fun SoAzListDetailScreen(
                 }
                 if (uiState.currentCategory == null) {
                     SoAzPlaceHolderScreen()
-                }
-                else if (uiState.isShowingRecommendationScreen) {
+                } else if (uiState.isShowingRecommendationScreen) {
                     SoAzRecommendationListScreen(
                         recommendations = /*TODO*/,
                         onBackButtonClicked = { /*TODO*/ },
                         uiState = /*TODO*/
                     )
+                } else {
+                    SoAzDetailScreen(recommendation = /*TODO*/)
                 }
-                else SoAzDetailScreen(recommendation = )
             }
         }
-        
+
         WindowWidthSizeClass.Compact -> {
-            if (uiState.currentCategory == null) {
-                SoAzPlaceHolderScreen()
+            Column {
+                if (uiState.currentCategory == null) {
+                    SoAzPlaceHolderScreen()
+                } else if (uiState.isShowingRecommendationScreen) {
+                    SoAzRecommendationListScreen(
+                        recommendations = /*TODO*/,
+                        onBackButtonClicked = { /*TODO*/ },
+                        uiState = /*TODO*/
+                    )
+                } else {
+                    SoAzDetailScreen(recommendation = /*TODO*/)
+                }
+                NavigationBar() {
+
+                }
             }
-            else if (uiState.isShowingRecommendationScreen) {
-                SoAzRecommendationListScreen(
-                    recommendations = ,
-                    onBackButtonClicked = { /*TODO*/ },
-                    uiState = 
-                )
-            }
-            else SoAzDetailScreen(recommendation = )
         }
     }
 }
+
