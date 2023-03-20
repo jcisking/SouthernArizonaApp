@@ -13,7 +13,13 @@ fun SoAzListDetailScreen(
 
     when(windowSize) {
 
-//        WindowWidthSizeClass.Compact ->
+        WindowWidthSizeClass.Expanded -> {
+            SoAzListAndDetailScreen()
+        }
+
+        WindowWidthSizeClass.Compact, WindowWidthSizeClass.Medium -> {
+
+        }
     }
 
     SoAzCategoryListScreen(categories = uiState.categories.keys.toList())
