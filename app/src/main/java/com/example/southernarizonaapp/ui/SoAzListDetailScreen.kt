@@ -1,5 +1,6 @@
 package com.example.southernarizonaapp.ui
 
+import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -23,8 +24,11 @@ fun SoAzListDetailScreen(
 
     if (navigationType == SoAzNavigationType.PERMANENT_NAVIGATION_DRAWER) {
         PermanentNavigationDrawer(drawerContent = { /*TODO*/ }) {
-
+            SoAzContent(contentType = contentType, navigationType = navigationType, uiState = uiState)
         }
+    }
+    else if (uiState.isShowingRecommendationScreen) {
+
     }
     when (windowSize) {
 
@@ -47,9 +51,9 @@ fun SoAzListDetailScreen(
                     SoAzPlaceHolderScreen()
                 } else if (uiState.isShowingRecommendationScreen) {
                     SoAzRecommendationListScreen(
-                        recommendations = /*TODO*/,
+                        /*TODO*/
                         onBackButtonClicked = { /*TODO*/ },
-                        uiState = /*TODO*/
+                        /*TODO*/
                     )
                 } else {
                     SoAzDetailScreen(recommendation = /*TODO*/)
@@ -63,9 +67,9 @@ fun SoAzListDetailScreen(
                     SoAzPlaceHolderScreen()
                 } else if (uiState.isShowingRecommendationScreen) {
                     SoAzRecommendationListScreen(
-                        recommendations = /*TODO*/,
+                        /*TODO*/
                         onBackButtonClicked = { /*TODO*/ },
-                        uiState = /*TODO*/
+                        /*TODO*/
                     )
                 } else {
                     SoAzDetailScreen(recommendation = /*TODO*/)
@@ -78,7 +82,30 @@ fun SoAzListDetailScreen(
 }
 
 @Composable
-fun SoAzContent() {
+fun SoAzContent(
+    contentType: SoAzContentType,
+    navigationType: SoAzNavigationType,
+    uiState: SoAzUiState,
+    modifier: Modifier = Modifier
+) {
+    Row {
+        AnimatedVisibility(visible = navigationType == SoAzNavigationType.NAVIGATION_RAIL) {
+            NavigationRail() {
+                
+            }
+        }
+        if (contentType == SoAzContentType.LIST_AND_DETAIL) {
+            SoAzListAndDetailScreen()
+        }
+        else {
+            SoAzRecommendationListScreen(
+                onBackButtonClicked = { /*TODO*/ },
+                uiState = uiState
+            )
+
+        }
+        
+    }
 
 }
 
