@@ -52,7 +52,8 @@ fun SoAzApp(
         composable(route = SoAzScreen.ListDetailRoute.name) {
             SoAzListDetailScreen(
                 uiState = uiState,
-                windowSize = windowSize
+                contentType = contentType,
+                navigationType = navigationType
             )
         }
 

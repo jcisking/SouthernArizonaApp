@@ -9,14 +9,23 @@ import androidx.compose.material3.PermanentNavigationDrawer
 import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import com.example.southernarizonaapp.ui.utils.SoAzContentType
+import com.example.southernarizonaapp.ui.utils.SoAzNavigationType
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun SoAzListDetailScreen(
-    windowSize: WindowWidthSizeClass,
     uiState: SoAzUiState,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    contentType: SoAzContentType,
+    navigationType: SoAzNavigationType
 ) {
+
+    if (navigationType == SoAzNavigationType.PERMANENT_NAVIGATION_DRAWER) {
+        PermanentNavigationDrawer(drawerContent = { /*TODO*/ }) {
+
+        }
+    }
     when (windowSize) {
 
         WindowWidthSizeClass.Expanded -> {
@@ -66,5 +75,10 @@ fun SoAzListDetailScreen(
             }
         }
     }
+}
+
+@Composable
+fun SoAzContent() {
+
 }
 
