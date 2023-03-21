@@ -24,7 +24,16 @@ fun SoAzListDetailScreen(
 
     if (navigationType == SoAzNavigationType.PERMANENT_NAVIGATION_DRAWER) {
         PermanentNavigationDrawer(drawerContent = { /*TODO*/ }) {
-            SoAzContent(contentType = contentType, navigationType = navigationType, uiState = uiState)
+            if (uiState.currentCategory == null) {
+                SoAzPlaceHolderScreen()
+            }
+            else {
+                SoAzContent(
+                    contentType = contentType,
+                    navigationType = navigationType,
+                    uiState = uiState
+                )
+            }
         }
     }
     else if (!uiState.isShowingDetailScreen) {
@@ -97,19 +106,31 @@ fun SoAzContent(
                 
             }
         }
-        if (contentType == SoAzContentType.LIST_AND_DETAIL) {
+        if (uiState.currentCategory == null) {
+            SoAzPlaceHolderScreen()
+        }
+        else if (contentType == SoAzContentType.LIST_AND_DETAIL) {
             SoAzListAndDetailScreen()
         }
         else {
             Column {
-                SoAzRecommendationListScreen(
-                    onBackButtonClicked = { /*TODO*/ },
-                    uiState = uiState
-                )
-                AnimatedVisibility(visible = navigationType == SoAzNavigationType.BOTTOM_NAVIGATION) {
-                    
+                if (uiState.currentCategory == null) {
+                    SoAzPlaceHolderScreen()
                 }
+                else {
+                    SoAzRecommendationListScreen(
+                        onBackButtonClicked = { /*TODO*/ },
+                        uiState = uiState
+                    )
+                }
+                AnimatedVisibility(
+                    visible = navigationType == SoAzNavigationType.BOTTOM_NAVIGATION
+                ) {
+                    NavigationBar() {
+                        
+                    }
 
+                }
             }
 
         }
