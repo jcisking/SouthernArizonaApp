@@ -27,8 +27,11 @@ fun SoAzListDetailScreen(
             SoAzContent(contentType = contentType, navigationType = navigationType, uiState = uiState)
         }
     }
-    else if (uiState.isShowingRecommendationScreen) {
-
+    else if (!uiState.isShowingDetailScreen) {
+        SoAzContent(contentType = , navigationType = , uiState = )
+    }
+    else {
+        SoAzDetailScreen(recommendation = )
     }
     when (windowSize) {
 
@@ -98,10 +101,16 @@ fun SoAzContent(
             SoAzListAndDetailScreen()
         }
         else {
-            SoAzRecommendationListScreen(
-                onBackButtonClicked = { /*TODO*/ },
-                uiState = uiState
-            )
+            Column {
+                SoAzRecommendationListScreen(
+                    onBackButtonClicked = { /*TODO*/ },
+                    uiState = uiState
+                )
+                AnimatedVisibility(visible = navigationType == SoAzNavigationType.BOTTOM_NAVIGATION) {
+                    
+                }
+
+            }
 
         }
         
