@@ -63,7 +63,9 @@ fun RecommendationListScreenTopBar(
             Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null)
             
         }
-        Text(text = stringResource(id = R.string.recomm_list_screen_top_bar, uiState.currentCategory ))
+        Text(text = stringResource(
+            id = R.string.recomm_list_screen_top_bar, uiState.currentCategory!!.displayName
+        ))
     }
 }
 

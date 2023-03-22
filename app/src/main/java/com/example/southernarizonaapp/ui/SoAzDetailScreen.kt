@@ -17,6 +17,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.example.southernarizonaapp.R
 import com.example.southernarizonaapp.data.Recommendation
+import com.example.southernarizonaapp.data.local.LocalRecommendationDataProvider
 
 @Composable
 fun SoAzDetailScreen(
@@ -25,8 +26,14 @@ fun SoAzDetailScreen(
 ) {
     LazyColumn(modifier = modifier) {
         item {
-            SoAzDetailScreenTopAppBar(uiState?.currentRecommendation)
-            DetailScreenContent(uiState)
+            SoAzDetailScreenTopAppBar(
+                uiState?.currentRecommendation ?:
+                LocalRecommendationDataProvider.defautRecommendation
+            )
+            DetailScreenContent(
+                uiState?.currentRecommendation ?:
+                LocalRecommendationDataProvider.defautRecommendation
+            )
         }
     }
 }

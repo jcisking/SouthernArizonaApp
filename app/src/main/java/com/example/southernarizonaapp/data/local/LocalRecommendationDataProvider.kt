@@ -1,10 +1,20 @@
 package com.example.southernarizonaapp.data.local
 
+import androidx.compose.ui.res.painterResource
 import com.example.southernarizonaapp.R
 import com.example.southernarizonaapp.data.Recommendation
 import com.example.southernarizonaapp.data.Category
 
 object LocalRecommendationDataProvider {
+    val defautRecommendation: Recommendation =
+        Recommendation(
+            image = R.drawable.blank_image,
+            name = "",
+            location = "",
+            category = Category.RESTAURANTS,
+            description = ""
+        )
+
     val allRecommendations: List<Recommendation> = listOf(
         Recommendation(
             image = R.drawable.alejandros_restaurant,

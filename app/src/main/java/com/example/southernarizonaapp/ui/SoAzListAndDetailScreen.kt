@@ -17,7 +17,7 @@ fun SoAzListAndDetailScreen(
     else {
         Row() {
             SoAzRecommendationListScreen(onBackButtonClicked = { /*TODO*/ }, uiState = )
-            SoAzDetailScreen(uiState = )
+            SoAzDetailScreen(uiState = uiState)
         }
     }
 
