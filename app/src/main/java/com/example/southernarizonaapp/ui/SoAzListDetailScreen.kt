@@ -42,55 +42,7 @@ fun SoAzListDetailScreen(
     else {
         SoAzDetailScreen(recommendation = )
     }
-    when (windowSize) {
 
-        WindowWidthSizeClass.Expanded -> {
-            PermanentNavigationDrawer(drawerContent = { /*TODO*/ }) {
-                if (uiState.currentCategory == null) {
-                    SoAzPlaceHolderScreen()
-                } else {
-                    SoAzListAndDetailScreen()
-                }
-            }
-        }
-
-        WindowWidthSizeClass.Medium -> {
-            Row {
-                NavigationRail() {
-
-                }
-                if (uiState.currentCategory == null) {
-                    SoAzPlaceHolderScreen()
-                } else if (uiState.isShowingRecommendationScreen) {
-                    SoAzRecommendationListScreen(
-                        /*TODO*/
-                        onBackButtonClicked = { /*TODO*/ },
-                        /*TODO*/
-                    )
-                } else {
-                    SoAzDetailScreen(recommendation = /*TODO*/)
-                }
-            }
-        }
-
-        WindowWidthSizeClass.Compact -> {
-            Column {
-                if (uiState.currentCategory == null) {
-                    SoAzPlaceHolderScreen()
-                } else if (uiState.isShowingRecommendationScreen) {
-                    SoAzRecommendationListScreen(
-                        /*TODO*/
-                        onBackButtonClicked = { /*TODO*/ },
-                        /*TODO*/
-                    )
-                } else {
-                    SoAzDetailScreen(recommendation = /*TODO*/)
-                }
-                NavigationBar() {
-                }
-            }
-        }
-    }
 }
 
 @Composable
@@ -106,10 +58,8 @@ fun SoAzContent(
                 
             }
         }
-        if (uiState.currentCategory == null) {
-            SoAzPlaceHolderScreen()
-        }
-        else if (contentType == SoAzContentType.LIST_AND_DETAIL) {
+
+        if (contentType == SoAzContentType.LIST_AND_DETAIL) {
             SoAzListAndDetailScreen()
         }
         else {
