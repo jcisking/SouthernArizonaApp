@@ -7,7 +7,6 @@ import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationRail
 import androidx.compose.material3.PermanentNavigationDrawer
-import androidx.compose.material3.windowsizeclass.WindowWidthSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import com.example.southernarizonaapp.ui.utils.SoAzContentType
@@ -40,7 +39,7 @@ fun SoAzListDetailScreen(
         SoAzContent(contentType = , navigationType = , uiState = )
     }
     else {
-        SoAzDetailScreen(recommendation = )
+        SoAzDetailScreen(uiState = )
     }
 
 }

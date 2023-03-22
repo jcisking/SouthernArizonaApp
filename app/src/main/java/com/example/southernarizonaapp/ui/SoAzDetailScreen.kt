@@ -15,21 +15,18 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.southernarizonaapp.R
 import com.example.southernarizonaapp.data.Recommendation
-import com.example.southernarizonaapp.data.local.LocalRecommendationDataProvider
-import com.example.southernarizonaapp.ui.theme.SouthernArizonaAppTheme
 
 @Composable
 fun SoAzDetailScreen(
-    recommendation: Recommendation,
+    uiState: SoAzUiState,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(modifier = modifier) {
         item {
-            SoAzDetailScreenTopAppBar(recommendation)
-            DetailScreenContent(recommendation)
+            SoAzDetailScreenTopAppBar(uiState?.currentRecommendation)
+            DetailScreenContent(uiState)
         }
     }
 }
