@@ -7,18 +7,17 @@ import androidx.compose.ui.Modifier
 @Composable
 fun SoAzListAndDetailScreen(
     uiState: SoAzUiState,
-    modifier: Modifier
-
+    modifier: Modifier = Modifier
 ) {
-
-    if (uiState.currentCategory == null) {
-        SoAzPlaceHolderScreen()
-    }
-    else {
-        Row() {
-            SoAzRecommendationListScreen(onBackButtonClicked = { /*TODO*/ }, uiState = )
+        Row(modifier = modifier) {
+            if (uiState.currentCategory == null) {
+                SoAzPlaceHolderScreen()
+            }
+            else {
+                SoAzRecommendationListScreen(
+                    onBackButtonClicked = { /*TODO*/ }, uiState = uiState
+                )
+            }
             SoAzDetailScreen(uiState = uiState)
         }
-    }
-
 }

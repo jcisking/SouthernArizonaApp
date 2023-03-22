@@ -23,20 +23,19 @@ fun SoAzListDetailScreen(
 
     if (navigationType == SoAzNavigationType.PERMANENT_NAVIGATION_DRAWER) {
         PermanentNavigationDrawer(drawerContent = { /*TODO*/ }) {
-            if (uiState.currentCategory == null) {
-                SoAzPlaceHolderScreen()
-            }
-            else {
-                SoAzContent(
-                    contentType = contentType,
-                    navigationType = navigationType,
-                    uiState = uiState
-                )
-            }
+            SoAzContent(
+                contentType = contentType,
+                navigationType = navigationType,
+                uiState = uiState
+            )
         }
     }
     else if (!uiState.isShowingDetailScreen) {
-        SoAzContent(contentType = , navigationType = , uiState = )
+        SoAzContent(
+            contentType = ,
+            navigationType = ,
+            uiState =
+        )
     }
     else {
         SoAzDetailScreen(uiState = )
