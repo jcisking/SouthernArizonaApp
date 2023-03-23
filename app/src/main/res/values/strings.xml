@@ -2,4 +2,6 @@
     <string name="app_name">Southern Arizona App</string>
     <string name="website_button_text">Go to website</string>
     <string name="recomm_list_screen_top_bar">%s Recommendations</string>
+    <string name="bottom_bar_text_placeholder">Please select a category below</string>
+    <string name="side_bar_text_placeholder">Please select a category from the side bar</string>
 </resources>

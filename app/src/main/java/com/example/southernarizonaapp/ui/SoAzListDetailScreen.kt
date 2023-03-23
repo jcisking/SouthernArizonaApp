@@ -16,9 +16,9 @@ import com.example.southernarizonaapp.ui.utils.SoAzNavigationType
 @Composable
 fun SoAzListDetailScreen(
     uiState: SoAzUiState,
-    modifier: Modifier = Modifier,
     contentType: SoAzContentType,
-    navigationType: SoAzNavigationType
+    navigationType: SoAzNavigationType,
+    modifier: Modifier = Modifier
 ) {
 
     if (navigationType == SoAzNavigationType.PERMANENT_NAVIGATION_DRAWER) {
@@ -32,13 +32,13 @@ fun SoAzListDetailScreen(
     }
     else if (!uiState.isShowingDetailScreen) {
         SoAzContent(
-            contentType = ,
-            navigationType = ,
-            uiState =
+            contentType = contentType,
+            navigationType = navigationType,
+            uiState = uiState
         )
     }
     else {
-        SoAzDetailScreen(uiState = )
+        SoAzDetailScreen(uiState = uiState)
     }
 
 }
@@ -58,7 +58,9 @@ fun SoAzContent(
         }
 
         if (contentType == SoAzContentType.LIST_AND_DETAIL) {
-            SoAzListAndDetailScreen()
+            SoAzListAndDetailScreen(
+                uiState = uiState
+            )
         }
         else {
             Column {
@@ -77,13 +79,9 @@ fun SoAzContent(
                     NavigationBar() {
                         
                     }
-
                 }
             }
-
         }
-        
     }
-
 }
 

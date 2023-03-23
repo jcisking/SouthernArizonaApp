@@ -36,15 +36,12 @@ class MainActivity : ComponentActivity() {
     }
 }
 
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+
 
 @Preview(showBackground = true)
 @Composable
 fun DefaultPreview() {
     SouthernArizonaAppTheme {
-        Greeting("Android")
+//        Greeting("Android")
     }
 }
