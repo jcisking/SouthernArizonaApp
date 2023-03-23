@@ -13,9 +13,10 @@ class SoAzViewModel: ViewModel() {
     val uiState = _uiState.asStateFlow()
 
     init {
+        initializeUiState()
 
     }
-    fun initializeUiState() {
+    private fun initializeUiState() {
         val categories: Map<Category, List<Recommendation>> =
             LocalRecommendationDataProvider.allRecommendations.groupBy { it.category }
         _uiState.value =

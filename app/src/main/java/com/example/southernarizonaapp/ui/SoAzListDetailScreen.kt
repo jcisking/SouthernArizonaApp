@@ -3,12 +3,11 @@ package com.example.southernarizonaapp.ui
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.material3.ExperimentalMaterial3Api
-import androidx.compose.material3.NavigationBar
-import androidx.compose.material3.NavigationRail
-import androidx.compose.material3.PermanentNavigationDrawer
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.vector.ImageVector
+import com.example.southernarizonaapp.data.Category
 import com.example.southernarizonaapp.ui.utils.SoAzContentType
 import com.example.southernarizonaapp.ui.utils.SoAzNavigationType
 
@@ -20,9 +19,22 @@ fun SoAzListDetailScreen(
     navigationType: SoAzNavigationType,
     modifier: Modifier = Modifier
 ) {
+    data class NavigationItemContent(
+        val icon: ImageVector,
+        val text: String,
+        val category: Category
+    ) {
+
+    }
 
     if (navigationType == SoAzNavigationType.PERMANENT_NAVIGATION_DRAWER) {
-        PermanentNavigationDrawer(drawerContent = { /*TODO*/ }) {
+        PermanentNavigationDrawer(
+            drawerContent = {
+                PermanentDrawerSheet() {
+                    NavigationDrawerContent()
+                }
+            }
+        ) {
             SoAzContent(
                 contentType = contentType,
                 navigationType = navigationType,
@@ -59,13 +71,16 @@ fun SoAzContent(
 
         if (contentType == SoAzContentType.LIST_AND_DETAIL) {
             SoAzListAndDetailScreen(
-                uiState = uiState
+                uiState = uiState,
+                navigationType = navigationType
             )
         }
         else {
             Column {
                 if (uiState.currentCategory == null) {
-                    SoAzPlaceHolderScreen()
+                    SoAzPlaceHolderScreen(
+                        navigationType = navigationType
+                    )
                 }
                 else {
                     SoAzRecommendationListScreen(
@@ -83,5 +98,15 @@ fun SoAzContent(
             }
         }
     }
+}
+
+@Composable
+fun NavigationDrawerContent(
+    modifier: Modifier = Modifier
+) {
+    Column(modifier = modifier) {
+
+    }
+
 }
 
