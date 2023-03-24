@@ -24,6 +24,11 @@ fun SoAzListDetailScreen(
         val text: String,
         val category: Category
     ) {
+        val navigationItemContentList: List<NavigationItemContent> = listOf(
+            NavigationItemContent(
+
+            )
+        )
 
     }
 
