@@ -23,7 +23,9 @@ class SoAzViewModel: ViewModel() {
             SoAzUiState(
                 categories = categories
             )
+    }
 
+    fun changeCurrentCategory(category: Category) {
 
     }
 }

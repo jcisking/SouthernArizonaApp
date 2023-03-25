@@ -68,7 +68,8 @@ fun SoAzListDetailScreen(
             SoAzContent(
                 contentType = contentType,
                 navigationType = navigationType,
-                uiState = uiState
+                uiState = uiState,
+                navItemList = navigationItemContentList
             )
         }
     }
@@ -76,7 +77,8 @@ fun SoAzListDetailScreen(
         SoAzContent(
             contentType = contentType,
             navigationType = navigationType,
-            uiState = uiState
+            uiState = uiState,
+            navItemList = navigationItemContentList
         )
     }
     else {
@@ -90,6 +92,7 @@ fun SoAzContent(
     contentType: SoAzContentType,
     navigationType: SoAzNavigationType,
     uiState: SoAzUiState,
+    navItemList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
 ) {
     Row {
@@ -122,9 +125,10 @@ fun SoAzContent(
                 AnimatedVisibility(
                     visible = navigationType == SoAzNavigationType.BOTTOM_NAVIGATION
                 ) {
-                    NavigationBar() {
-                        
-                    }
+                    SoAzBottomNavigationBar(
+                        currentTab = uiState.currentCategory,
+                        navigationItemList = navItemList
+                    )
                 }
             }
         }
@@ -161,8 +165,8 @@ fun NavigationDrawerContent(
 
 @Composable
 fun SoAzBottomNavigationBar(
-    currentTab: Category,
-    onTabPressed: (Category) -> Unit,
+    currentTab: Category?,
+//    onTabPressed: (Category) -> Unit,
     navigationItemList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
 ) {
@@ -172,7 +176,7 @@ fun SoAzBottomNavigationBar(
         for (navItem in navigationItemList) {
             NavigationBarItem(
                 selected = navItem.category == currentTab,
-                onClick = {onTabPressed},
+                onClick = {},
                 icon = {
                     Icon(
                         painter = painterResource(id = navItem.icon),

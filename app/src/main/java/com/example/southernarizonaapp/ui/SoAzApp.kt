@@ -53,7 +53,8 @@ fun SoAzApp(
             SoAzListDetailScreen(
                 uiState = uiState,
                 contentType = contentType,
-                navigationType = navigationType
+                navigationType = navigationType,
+                onTabPressed = { viewModel.changeCurrentCategory(it) }
             )
         }
 
