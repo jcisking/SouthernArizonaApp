@@ -6,6 +6,7 @@ import com.example.southernarizonaapp.data.Recommendation
 import com.example.southernarizonaapp.data.local.LocalRecommendationDataProvider
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.asStateFlow
+import kotlinx.coroutines.flow.update
 
 class SoAzViewModel: ViewModel() {
 
@@ -14,7 +15,6 @@ class SoAzViewModel: ViewModel() {
 
     init {
         initializeUiState()
-
     }
     private fun initializeUiState() {
         val categories: Map<Category, List<Recommendation>> =
@@ -26,6 +26,11 @@ class SoAzViewModel: ViewModel() {
     }
 
     fun changeCurrentCategory(category: Category) {
+        _uiState.update {
+            it.copy(
+                currentCategory = category
+            )
+        }
 
     }
 }

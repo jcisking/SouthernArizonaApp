@@ -19,7 +19,8 @@ import com.example.southernarizonaapp.R
 @Composable
 fun SoAzRecommendationListScreen(
     onBackButtonClicked: () -> Unit,
-    uiState: SoAzUiState
+    uiState: SoAzUiState,
+    modifier: Modifier = Modifier
 ) {
     val recommendations = uiState.currentRecommendationList
     Scaffold(
@@ -28,7 +29,7 @@ fun SoAzRecommendationListScreen(
             onBackButtonClicked = onBackButtonClicked
         ) }
     ) { it ->
-        LazyColumn(modifier = Modifier
+        LazyColumn(modifier = modifier
             .padding(it)
             .fillMaxWidth()) {
             items(recommendations) {

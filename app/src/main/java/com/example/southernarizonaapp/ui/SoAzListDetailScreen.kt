@@ -2,12 +2,13 @@ package com.example.southernarizonaapp.ui
 
 import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedVisibility
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import com.example.southernarizonaapp.data.Category
@@ -69,7 +70,8 @@ fun SoAzListDetailScreen(
                 contentType = contentType,
                 navigationType = navigationType,
                 uiState = uiState,
-                navItemList = navigationItemContentList
+                navItemList = navigationItemContentList,
+                onTabPressed = onTabPressed
             )
         }
     }
@@ -78,7 +80,8 @@ fun SoAzListDetailScreen(
             contentType = contentType,
             navigationType = navigationType,
             uiState = uiState,
-            navItemList = navigationItemContentList
+            navItemList = navigationItemContentList,
+            onTabPressed = onTabPressed
         )
     }
     else {
@@ -93,9 +96,10 @@ fun SoAzContent(
     navigationType: SoAzNavigationType,
     uiState: SoAzUiState,
     navItemList: List<NavigationItemContent>,
+    onTabPressed: (Category) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Row {
+    Row(modifier = modifier) {
         AnimatedVisibility(visible = navigationType == SoAzNavigationType.NAVIGATION_RAIL) {
             NavigationRail() {
                 
@@ -110,16 +114,18 @@ fun SoAzContent(
             )
         }
         else {
-            Column {
+            Column(modifier = Modifier.background(Color.Magenta).fillMaxSize()) {
                 if (uiState.currentCategory == null) {
                     SoAzPlaceHolderScreen(
-                        navigationType = navigationType
+                        navigationType = navigationType,
+                        modifier = Modifier.weight(1f).align(Alignment.CenterHorizontally)
                     )
                 }
                 else {
                     SoAzRecommendationListScreen(
                         onBackButtonClicked = { /*TODO*/ },
-                        uiState = uiState
+                        uiState = uiState,
+                        modifier = Modifier.weight(1f)
                     )
                 }
                 AnimatedVisibility(
@@ -127,7 +133,8 @@ fun SoAzContent(
                 ) {
                     SoAzBottomNavigationBar(
                         currentTab = uiState.currentCategory,
-                        navigationItemList = navItemList
+                        navigationItemList = navItemList,
+                        onTabPressed = onTabPressed
                     )
                 }
             }
@@ -166,17 +173,17 @@ fun NavigationDrawerContent(
 @Composable
 fun SoAzBottomNavigationBar(
     currentTab: Category?,
-//    onTabPressed: (Category) -> Unit,
+    onTabPressed: (Category) -> Unit,
     navigationItemList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
 ) {
     NavigationBar(
-        modifier = modifier.fillMaxWidth()
+        modifier = modifier
     ) {
         for (navItem in navigationItemList) {
             NavigationBarItem(
                 selected = navItem.category == currentTab,
-                onClick = {},
+                onClick = {onTabPressed},
                 icon = {
                     Icon(
                         painter = painterResource(id = navItem.icon),
