@@ -4,6 +4,7 @@ import androidx.annotation.DrawableRes
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -20,7 +21,6 @@ fun SoAzListDetailScreen(
     uiState: SoAzUiState,
     contentType: SoAzContentType,
     navigationType: SoAzNavigationType,
-    selectedCategory: Category,
     onTabPressed: (Category) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -158,6 +158,34 @@ fun NavigationDrawerContent(
     }
 
 }
+
+@Composable
+fun SoAzBottomNavigationBar(
+    currentTab: Category,
+    onTabPressed: (Category) -> Unit,
+    navigationItemList: List<NavigationItemContent>,
+    modifier: Modifier = Modifier
+) {
+    NavigationBar(
+        modifier = modifier.fillMaxWidth()
+    ) {
+        for (navItem in navigationItemList) {
+            NavigationBarItem(
+                selected = navItem.category == currentTab,
+                onClick = {onTabPressed},
+                icon = {
+                    Icon(
+                        painter = painterResource(id = navItem.icon),
+                        contentDescription = null
+                    )
+                }
+            )
+        }
+        
+    }
+}
+
+
 
 data class NavigationItemContent(
     @DrawableRes val icon: Int,
