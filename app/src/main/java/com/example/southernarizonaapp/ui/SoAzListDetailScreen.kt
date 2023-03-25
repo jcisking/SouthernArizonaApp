@@ -20,15 +20,48 @@ fun SoAzListDetailScreen(
     uiState: SoAzUiState,
     contentType: SoAzContentType,
     navigationType: SoAzNavigationType,
+    selectedCategory: Category,
+    onTabPressed: (Category) -> Unit,
     modifier: Modifier = Modifier
 ) {
+    val navigationItemContentList: List<NavigationItemContent> = listOf(
+        NavigationItemContent(
+            icon = R.drawable.restaurant_fill0_wght400_grad0_opsz48,
+            text = R.string.nav_item_restaurant_text,
+            category = Category.RESTAURANTS
+        ),
+        NavigationItemContent(
+            icon = R.drawable.attractions_fill0_wght400_grad0_opsz48,
+            text = R.string.nav_item_tourist_attractions_text,
+            category = Category.TOURIST_ATTRACTIONS
+        ),
+        NavigationItemContent(
+            icon = R.drawable.shopping_cart_fill0_wght400_grad0_opsz48,
+            text = R.string.nav_item_shopping_text,
+            category = Category.SHOPPING
+        ),
+        NavigationItemContent(
+            icon = R.drawable.nature_people_fill0_wght400_grad0_opsz48,
+            text = R.string.nav_item_parks_text,
+            category = Category.PARKS
+        ),
+        NavigationItemContent(
+            icon = R.drawable.hotel_fill0_wght400_grad0_opsz48,
+            text = R.string.nav_item_resorts_text,
+            category = Category.RESORTS
+        )
+    )
 
 
     if (navigationType == SoAzNavigationType.PERMANENT_NAVIGATION_DRAWER) {
         PermanentNavigationDrawer(
             drawerContent = {
                 PermanentDrawerSheet() {
-                    NavigationDrawerContent()
+                    NavigationDrawerContent(
+                        selectedCategory = uiState.currentCategory,
+                        onTabPressed = onTabPressed,
+                        navItemList = navigationItemContentList
+                    )
                 }
             }
         ) {
@@ -101,8 +134,8 @@ fun SoAzContent(
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun NavigationDrawerContent(
-    selectedCategory: Category,
-    onCategoryClicked: ((Category) -> Unit),
+    selectedCategory: Category?,
+    onTabPressed: ((Category) -> Unit),
     navItemList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
 ) {
@@ -111,7 +144,7 @@ fun NavigationDrawerContent(
             NavigationDrawerItem(
                 label = { Text(text = stringResource(id = navItem.text)) },
                 selected = navItem.category == selectedCategory,
-                onClick = { onCategoryClicked },
+                onClick = { onTabPressed },
                 icon = {
                     Icon(
                         painter = painterResource(id = navItem.icon), 
@@ -130,34 +163,5 @@ data class NavigationItemContent(
     @DrawableRes val icon: Int,
     val text: Int,
     val category: Category
-) {
-    val navigationItemContentList: List<NavigationItemContent> = listOf(
-        NavigationItemContent(
-            icon = R.drawable.restaurant_fill0_wght400_grad0_opsz48,
-            text = R.string.nav_item_restaurant_text,
-            category = Category.RESTAURANTS
-        ),
-        NavigationItemContent(
-            icon = R.drawable.attractions_fill0_wght400_grad0_opsz48,
-            text = R.string.nav_item_tourist_attractions_text,
-            category = Category.TOURIST_ATTRACTIONS
-        ),
-        NavigationItemContent(
-            icon = R.drawable.shopping_cart_fill0_wght400_grad0_opsz48,
-            text = R.string.nav_item_shopping_text,
-            category = Category.SHOPPING
-        ),
-        NavigationItemContent(
-            icon = R.drawable.nature_people_fill0_wght400_grad0_opsz48,
-            text = R.string.nav_item_parks_text,
-            category = Category.PARKS
-        ),
-        NavigationItemContent(
-            icon = R.drawable.hotel_fill0_wght400_grad0_opsz48,
-            text = R.string.nav_item_resorts_text,
-            category = Category.RESORTS
-        )
-    )
-
-}
+)
 
