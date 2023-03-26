@@ -13,22 +13,27 @@ class SoAzViewModel: ViewModel() {
     private val _uiState = MutableStateFlow(SoAzUiState())
     val uiState = _uiState.asStateFlow()
 
-    init {
-        initializeUiState()
-    }
-    private fun initializeUiState() {
-        val categories: Map<Category, List<Recommendation>> =
-            LocalRecommendationDataProvider.allRecommendations.groupBy { it.category }
-        _uiState.value =
-            SoAzUiState(
-                categories = categories
-            )
-    }
+//    init {
+//        initializeUiState()
+//    }
+//    private fun initializeUiState() {
+//        val categories: Map<Category, List<Recommendation>> =
+//            LocalRecommendationDataProvider.allRecommendations.groupBy { it.category }
+//        _uiState.value =
+//            SoAzUiState(
+//                categories = categories
+//            )
+//    }
+
+//    private fun initializeCategories
 
     fun changeCurrentCategory(category: Category) {
+        val categories: Map<Category, List<Recommendation>> =
+            LocalRecommendationDataProvider.allRecommendations.groupBy { it.category }
         _uiState.update {
             it.copy(
-                currentCategory = category
+                currentCategory = category,
+                categories = categories
             )
         }
 

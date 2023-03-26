@@ -31,9 +31,10 @@ fun SoAzRecommendationListScreen(
     ) { it ->
         LazyColumn(modifier = modifier
             .padding(it)
-            .fillMaxWidth()) {
-            items(recommendations) {
-                RecommendationListItem(it)
+            .fillMaxWidth()
+        ) {
+            items(recommendations) { item ->
+                RecommendationListItem(item)
             }
         }
     }

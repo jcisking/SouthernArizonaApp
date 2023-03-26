@@ -146,7 +146,7 @@ fun SoAzContent(
 @Composable
 fun NavigationDrawerContent(
     selectedCategory: Category?,
-    onTabPressed: ((Category) -> Unit),
+    onTabPressed: (Category) -> Unit,
     navItemList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
 ) {
@@ -183,7 +183,7 @@ fun SoAzBottomNavigationBar(
         for (navItem in navigationItemList) {
             NavigationBarItem(
                 selected = navItem.category == currentTab,
-                onClick = {onTabPressed},
+                onClick = {onTabPressed(navItem.category)},
                 icon = {
                     Icon(
                         painter = painterResource(id = navItem.icon),
