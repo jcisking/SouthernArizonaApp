@@ -1,12 +1,13 @@
 package com.example.southernarizonaapp.ui
 
 import androidx.annotation.DrawableRes
+import androidx.annotation.StringRes
 import com.example.southernarizonaapp.R
 import com.example.southernarizonaapp.data.Category
 
 data class NavigationItemContent(
     @DrawableRes val icon: Int,
-    val text: Int,
+    @StringRes val text: Int,
     val category: Category
 ) {
     companion object {

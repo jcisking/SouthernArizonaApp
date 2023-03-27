@@ -8,8 +8,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.example.southernarizonaapp.data.Category
 import com.example.southernarizonaapp.ui.utils.SoAzContentType
 import com.example.southernarizonaapp.ui.utils.SoAzNavigationType
@@ -72,10 +74,11 @@ fun SoAzContent(
 ) {
     Row(modifier = modifier) {
         AnimatedVisibility(visible = navigationType == SoAzNavigationType.NAVIGATION_RAIL) {
-            NavigationRail() {
-                
-                
-            }
+            SoAzNavigationRail(
+                onTabPressed = onTabPressed,
+                navItemList = navItemList,
+                currentTab = uiState.currentCategory
+            )
         }
 
         if (contentType == SoAzContentType.LIST_AND_DETAIL) {
@@ -86,11 +89,15 @@ fun SoAzContent(
             )
         }
         else {
-            Column(modifier = Modifier.background(Color.Magenta).fillMaxSize()) {
+            Column(modifier = Modifier
+                .background(Color.Magenta)
+                .fillMaxSize()) {
                 if (uiState.currentCategory == null) {
                     SoAzPlaceHolderScreen(
                         navigationType = navigationType,
-                        modifier = Modifier.weight(1f).align(Alignment.CenterHorizontally)
+                        modifier = Modifier
+                            .weight(1f)
+                            .align(Alignment.CenterHorizontally)
                     )
                 }
                 else {
@@ -158,16 +165,44 @@ fun SoAzBottomNavigationBar(
             NavigationBarItem(
                 selected = navItem.category == currentTab,
                 onClick = {onTabPressed(navItem.category)},
+                label = { Text(
+                    text = stringResource(id = navItem.text),
+                    softWrap = true
+                ) },
                 icon = {
                     Icon(
+                        modifier = Modifier.size(30.dp),
                         painter = painterResource(id = navItem.icon),
                         contentDescription = null
                     )
                 }
             )
         }
-        
     }
+}
+
+@Composable
+fun SoAzNavigationRail(
+    currentTab: Category?,
+    onTabPressed: (Category) -> Unit,
+    navItemList: List<NavigationItemContent>,
+    modifier: Modifier = Modifier
+) {
+    NavigationRail(modifier = modifier) {
+        for (navItem in navItemList) {
+            NavigationRailItem(
+                selected = navItem.category == currentTab ,
+                onClick = { onTabPressed(navItem.category) },
+                label = { Text(text = stringResource(id = navItem.text))},
+                icon = {
+                    Icon(painter = painterResource(id = navItem.icon), contentDescription = null)
+                }
+            )
+
+        }
+
+    }
+
 }
 
 
