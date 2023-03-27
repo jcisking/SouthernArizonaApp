@@ -15,11 +15,13 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.example.southernarizonaapp.data.Recommendation
 import com.example.southernarizonaapp.R
+import com.example.southernarizonaapp.data.Category
 
 @Composable
 fun SoAzRecommendationListScreen(
     onBackButtonClicked: () -> Unit,
     uiState: SoAzUiState,
+    onTabPressed: (Category) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val recommendations = uiState.currentRecommendationList
@@ -27,7 +29,12 @@ fun SoAzRecommendationListScreen(
         topBar = { RecommendationListScreenTopBar(
             uiState = uiState,
             onBackButtonClicked = onBackButtonClicked
-        ) }
+        ) },
+        bottomBar = {SoAzBottomNavigationBar(
+            currentTab = uiState.currentCategory,
+            onTabPressed = onTabPressed,
+            navigationItemList = NavigationItemContent.navigationItemContentList
+        )}
     ) { it ->
         LazyColumn(modifier = modifier
             .padding(it)

@@ -25,15 +25,23 @@ class SoAzViewModel: ViewModel() {
 //            )
 //    }
 
-//    private fun initializeCategories
-
-    fun changeCurrentCategory(category: Category) {
+    private fun initializeCategories() {
         val categories: Map<Category, List<Recommendation>> =
             LocalRecommendationDataProvider.allRecommendations.groupBy { it.category }
         _uiState.update {
             it.copy(
-                currentCategory = category,
                 categories = categories
+            )
+        }
+    }
+
+    fun changeCurrentCategory(category: Category) {
+        if (_uiState.value.currentCategory == null) {
+            initializeCategories()
+        }
+        _uiState.update {
+            it.copy(
+                currentCategory = category,
             )
         }
 
