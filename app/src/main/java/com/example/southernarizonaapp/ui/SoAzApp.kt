@@ -54,7 +54,8 @@ fun SoAzApp(
                 uiState = uiState,
                 contentType = contentType,
                 navigationType = navigationType,
-                onTabPressed = { viewModel.changeCurrentCategory(it) }
+                onTabPressed = { viewModel.changeCurrentCategory(it) },
+                onRecommendationCardPressed = {}
             )
         }
 

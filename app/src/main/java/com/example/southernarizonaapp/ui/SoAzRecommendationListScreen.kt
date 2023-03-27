@@ -8,6 +8,7 @@ import androidx.compose.foundation.lazy.items
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
@@ -24,6 +25,7 @@ fun SoAzRecommendationListScreen(
     uiState: SoAzUiState,
     navigationType: SoAzNavigationType,
     onTabPressed: (Category) -> Unit,
+    onRecommendationCardPressed: (Recommendation) -> Unit,
     modifier: Modifier = Modifier
 ) {
     val recommendations = uiState.currentRecommendationList
@@ -33,30 +35,40 @@ fun SoAzRecommendationListScreen(
             onBackButtonClicked = onBackButtonClicked
         ) },
         bottomBar = {
-            if (navigationType == SoAzNavigationType.BOTTOM_NAVIGATION)
-            SoAzBottomNavigationBar(
-            currentTab = uiState.currentCategory,
-            onTabPressed = onTabPressed,
-            navigationItemList = NavigationItemContent.navigationItemContentList
-        )}
+            if (navigationType == SoAzNavigationType.BOTTOM_NAVIGATION) {
+                SoAzBottomNavigationBar(
+                    currentTab = uiState.currentCategory,
+                    onTabPressed = onTabPressed,
+                    navigationItemList = NavigationItemContent.navigationItemContentList
+                )
+            }
+        }
     ) { it ->
         LazyColumn(modifier = modifier
             .padding(it)
             .fillMaxWidth()
         ) {
-            items(recommendations) { item ->
-                RecommendationListItem(item)
+            items(recommendations) { recommendation ->
+                RecommendationListItem(
+                    recommendation = recommendation,
+                    onCardPressed = { onRecommendationCardPressed(recommendation) }
+                )
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterialApi::class)
 @Composable
 fun RecommendationListItem(
     recommendation: Recommendation,
+    onCardPressed: (Recommendation) -> Unit,
     modifier: Modifier = Modifier
 ) {
-    Card(modifier = modifier.fillMaxWidth()) {
+    Card (
+        onClick = { onCardPressed(recommendation) },
+        modifier = modifier.fillMaxWidth()
+    ) {
         Row() {
             Image(modifier = Modifier.size(65.dp), painter = painterResource(id = recommendation.image), contentDescription = null)
             Text(text = recommendation.name)

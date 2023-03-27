@@ -16,6 +16,7 @@ import com.example.southernarizonaapp.data.Category
 import com.example.southernarizonaapp.ui.utils.SoAzContentType
 import com.example.southernarizonaapp.ui.utils.SoAzNavigationType
 import com.example.southernarizonaapp.R
+import com.example.southernarizonaapp.data.Recommendation
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -24,6 +25,7 @@ fun SoAzListDetailScreen(
     contentType: SoAzContentType,
     navigationType: SoAzNavigationType,
     onTabPressed: (Category) -> Unit,
+    onRecommendationCardPressed: (Recommendation) -> Unit,
     modifier: Modifier = Modifier
 ) {
 
@@ -44,7 +46,8 @@ fun SoAzListDetailScreen(
                 navigationType = navigationType,
                 uiState = uiState,
                 navItemList = NavigationItemContent.navigationItemContentList,
-                onTabPressed = onTabPressed
+                onTabPressed = onTabPressed,
+                onRecommendationCardPressed = onRecommendationCardPressed
             )
         }
     }
@@ -54,7 +57,8 @@ fun SoAzListDetailScreen(
             navigationType = navigationType,
             uiState = uiState,
             navItemList = NavigationItemContent.navigationItemContentList,
-            onTabPressed = onTabPressed
+            onTabPressed = onTabPressed,
+            onRecommendationCardPressed = onRecommendationCardPressed
         )
     }
     else {
@@ -70,6 +74,7 @@ fun SoAzContent(
     uiState: SoAzUiState,
     navItemList: List<NavigationItemContent>,
     onTabPressed: (Category) -> Unit,
+    onRecommendationCardPressed: (Recommendation) -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(modifier = modifier) {
@@ -85,7 +90,8 @@ fun SoAzContent(
             SoAzListAndDetailScreen(
                 uiState = uiState,
                 navigationType = navigationType,
-                onTabPressed = onTabPressed
+                onTabPressed = onTabPressed,
+                onRecommendationCardPressed = onRecommendationCardPressed
             )
         }
         else {
@@ -106,7 +112,8 @@ fun SoAzContent(
                         uiState = uiState,
                         modifier = Modifier.weight(1f),
                         onTabPressed = onTabPressed,
-                        navigationType = navigationType
+                        navigationType = navigationType,
+                        onRecommendationCardPressed = onRecommendationCardPressed
                     )
                 }
                 AnimatedVisibility(

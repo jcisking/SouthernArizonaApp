@@ -41,9 +41,18 @@ class SoAzViewModel: ViewModel() {
         }
         _uiState.update {
             it.copy(
-                currentCategory = category,
+                currentCategory = category
             )
         }
 
+    }
+
+    fun onRecommendationClicked(recommendation: Recommendation) {
+        _uiState.update {
+            it.copy(
+                isShowingDetailScreen = true,
+                currentRecommendation = recommendation
+            )
+        }
     }
 }
