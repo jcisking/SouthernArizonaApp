@@ -16,11 +16,13 @@ import androidx.compose.ui.unit.dp
 import com.example.southernarizonaapp.data.Recommendation
 import com.example.southernarizonaapp.R
 import com.example.southernarizonaapp.data.Category
+import com.example.southernarizonaapp.ui.utils.SoAzNavigationType
 
 @Composable
 fun SoAzRecommendationListScreen(
     onBackButtonClicked: () -> Unit,
     uiState: SoAzUiState,
+    navigationType: SoAzNavigationType,
     onTabPressed: (Category) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -30,7 +32,9 @@ fun SoAzRecommendationListScreen(
             uiState = uiState,
             onBackButtonClicked = onBackButtonClicked
         ) },
-        bottomBar = {SoAzBottomNavigationBar(
+        bottomBar = {
+            if (navigationType == SoAzNavigationType.BOTTOM_NAVIGATION)
+            SoAzBottomNavigationBar(
             currentTab = uiState.currentCategory,
             onTabPressed = onTabPressed,
             navigationItemList = NavigationItemContent.navigationItemContentList
