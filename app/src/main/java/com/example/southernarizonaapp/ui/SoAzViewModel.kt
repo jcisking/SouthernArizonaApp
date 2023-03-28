@@ -55,4 +55,12 @@ class SoAzViewModel: ViewModel() {
             )
         }
     }
+
+    fun resetRecommendationScreenState() {
+        _uiState.update {
+            it.copy(
+                isShowingDetailScreen = false
+            )
+        }
+    }
 }

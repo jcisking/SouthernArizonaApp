@@ -28,6 +28,6 @@ fun SoAzListAndDetailScreen(
                     onRecommendationCardPressed = onRecommendationCardPressed
                 )
             }
-            SoAzDetailScreen(uiState = uiState)
+            SoAzDetailScreen(uiState = uiState, onBackButtonPressed = {})
         }
 }

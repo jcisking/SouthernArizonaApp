@@ -22,13 +22,15 @@ import com.example.southernarizonaapp.data.local.LocalRecommendationDataProvider
 @Composable
 fun SoAzDetailScreen(
     uiState: SoAzUiState,
+    onBackButtonPressed: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     LazyColumn(modifier = modifier) {
         item {
             SoAzDetailScreenTopAppBar(
                 uiState?.currentRecommendation ?:
-                LocalRecommendationDataProvider.defautRecommendation
+                LocalRecommendationDataProvider.defautRecommendation,
+                onBackButtonPressed = onBackButtonPressed
             )
             DetailScreenContent(
                 uiState?.currentRecommendation ?:
@@ -41,10 +43,11 @@ fun SoAzDetailScreen(
 @Composable
 fun SoAzDetailScreenTopAppBar(
     recommendation: Recommendation,
+    onBackButtonPressed: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(modifier = modifier.fillMaxWidth()) {
-        IconButton(onClick = { /*TODO*/ }) {
+        IconButton(onClick =  onBackButtonPressed ) {
             Icon(imageVector = Icons.Filled.ArrowBack , contentDescription = null)
         }
         Text(text = recommendation.name)

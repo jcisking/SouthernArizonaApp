@@ -25,6 +25,7 @@ fun SoAzListDetailScreen(
     contentType: SoAzContentType,
     navigationType: SoAzNavigationType,
     onTabPressed: (Category) -> Unit,
+    onDetailBackButtonPressed: () -> Unit,
     onRecommendationCardPressed: (Recommendation) -> Unit,
     modifier: Modifier = Modifier
 ) {
@@ -62,7 +63,10 @@ fun SoAzListDetailScreen(
         )
     }
     else {
-        SoAzDetailScreen(uiState = uiState)
+        SoAzDetailScreen(
+            uiState = uiState,
+            onBackButtonPressed = onDetailBackButtonPressed
+        )
     }
 
 }
@@ -95,9 +99,11 @@ fun SoAzContent(
             )
         }
         else {
-            Column(modifier = Modifier
+            Column(
+                modifier = Modifier
                 .background(Color.Magenta)
-                .fillMaxSize()) {
+                .fillMaxSize()
+            ) {
                 if (uiState.currentCategory == null) {
                     SoAzPlaceHolderScreen(
                         navigationType = navigationType,

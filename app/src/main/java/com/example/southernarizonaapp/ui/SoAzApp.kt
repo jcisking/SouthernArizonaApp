@@ -55,9 +55,9 @@ fun SoAzApp(
                 contentType = contentType,
                 navigationType = navigationType,
                 onTabPressed = { viewModel.changeCurrentCategory(it) },
-                onRecommendationCardPressed = {}
+                onRecommendationCardPressed = { viewModel.onRecommendationClicked(it) },
+                onDetailBackButtonPressed = { viewModel.resetRecommendationScreenState() }
             )
         }
-
     }
 }
