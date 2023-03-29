@@ -30,10 +30,7 @@ fun SoAzRecommendationListScreen(
 ) {
     val recommendations = uiState.currentRecommendationList
     Scaffold(
-        topBar = { RecommendationListScreenTopBar(
-            uiState = uiState,
-            onBackButtonClicked = onBackButtonClicked
-        ) },
+        topBar = { RecommendationListScreenTopBar(uiState = uiState) },
         bottomBar = {
             if (navigationType == SoAzNavigationType.BOTTOM_NAVIGATION) {
                 SoAzBottomNavigationBar(
@@ -44,9 +41,9 @@ fun SoAzRecommendationListScreen(
             }
         }
     ) { it ->
-        LazyColumn(modifier = modifier
+        LazyColumn(
+            modifier = modifier
             .padding(it)
-            .fillMaxWidth()
         ) {
             items(recommendations) { recommendation ->
                 RecommendationListItem(
@@ -77,17 +74,12 @@ fun RecommendationListItem(
 
 }
 
-@Composable 
+@Composable
 fun RecommendationListScreenTopBar(
     uiState: SoAzUiState,
-    onBackButtonClicked: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     TopAppBar(modifier = modifier) {
-        IconButton(onClick = { onBackButtonClicked }) {
-            Icon(imageVector = Icons.Default.ArrowBack, contentDescription = null)
-            
-        }
         Text(text = stringResource(
             id = R.string.recomm_list_screen_top_bar, uiState.currentCategory!!.displayName
         ))

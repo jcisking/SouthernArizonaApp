@@ -1,5 +1,6 @@
 package com.example.southernarizonaapp.ui
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -25,6 +26,9 @@ fun SoAzDetailScreen(
     onBackButtonPressed: () -> Unit,
     modifier: Modifier = Modifier
 ) {
+    BackHandler() {
+        onBackButtonPressed()
+    }
     LazyColumn(modifier = modifier) {
         item {
             SoAzDetailScreenTopAppBar(
