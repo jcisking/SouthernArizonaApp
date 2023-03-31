@@ -21,7 +21,6 @@ fun SoAzListAndDetailScreen(
             }
             else {
                 SoAzRecommendationListScreen(
-                    onBackButtonClicked = { /*TODO*/ },
                     uiState = uiState,
                     onTabPressed = onTabPressed,
                     navigationType = navigationType,

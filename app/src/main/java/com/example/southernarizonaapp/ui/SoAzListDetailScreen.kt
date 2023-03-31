@@ -101,8 +101,8 @@ fun SoAzContent(
         else {
             Column(
                 modifier = Modifier
-                .background(Color.Magenta)
-                .fillMaxSize()
+                    .background(Color.Magenta)
+                    .fillMaxSize()
             ) {
                 if (uiState.currentCategory == null) {
                     SoAzPlaceHolderScreen(
@@ -114,7 +114,6 @@ fun SoAzContent(
                 }
                 else {
                     SoAzRecommendationListScreen(
-                        onBackButtonClicked = { /*TODO*/ },
                         uiState = uiState,
                         modifier = Modifier.weight(1f),
                         onTabPressed = onTabPressed,
@@ -147,7 +146,12 @@ fun NavigationDrawerContent(
     Column(modifier = modifier) {
         for (navItem in navItemList) {
             NavigationDrawerItem(
-                label = { Text(text = stringResource(id = navItem.text)) },
+                label = {
+                    Text(
+                        text = stringResource(id = navItem.text),
+//                        style = MaterialTheme.typography.
+                    )
+                },
                 selected = navItem.category == selectedCategory,
                 onClick = { onTabPressed },
                 icon = {
@@ -180,7 +184,7 @@ fun SoAzBottomNavigationBar(
                 onClick = {onTabPressed(navItem.category)},
                 label = { Text(
                     text = stringResource(id = navItem.text),
-                    softWrap = true
+                    style = androidx.compose.material.MaterialTheme.typography.button
                 ) },
                 icon = {
                     Icon(

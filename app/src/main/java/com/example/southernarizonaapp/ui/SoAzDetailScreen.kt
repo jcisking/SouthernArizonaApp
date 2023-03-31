@@ -110,7 +110,7 @@ fun RecommendationLocation(
             painter = painterResource(id = R.drawable.baseline_location_on_24),
             contentDescription = null
         )
-        Text(text = recommendation.location)
+        Text(text = recommendation.location, style = MaterialTheme.typography.body1)
     }
 }
 

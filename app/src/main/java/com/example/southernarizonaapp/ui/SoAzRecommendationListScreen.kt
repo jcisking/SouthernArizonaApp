@@ -21,7 +21,6 @@ import com.example.southernarizonaapp.ui.utils.SoAzNavigationType
 
 @Composable
 fun SoAzRecommendationListScreen(
-    onBackButtonClicked: () -> Unit,
     uiState: SoAzUiState,
     navigationType: SoAzNavigationType,
     onTabPressed: (Category) -> Unit,
@@ -80,9 +79,12 @@ fun RecommendationListScreenTopBar(
     modifier: Modifier = Modifier
 ) {
     TopAppBar(modifier = modifier) {
-        Text(text = stringResource(
-            id = R.string.recomm_list_screen_top_bar, uiState.currentCategory!!.displayName
-        ))
+        Text(
+            text = stringResource(
+                id = R.string.recomm_list_screen_top_bar, uiState.currentCategory!!.displayName
+            ),
+            style = MaterialTheme.typography.h1
+        )
     }
 }
 

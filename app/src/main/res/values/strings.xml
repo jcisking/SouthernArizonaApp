@@ -6,7 +6,7 @@
     <string name="side_bar_text_placeholder">Please select a category from the side bar</string>
     <string name="nav_item_restaurant_text">Restaurants</string>
     <string name="nav_item_shopping_text">Shopping</string>
-    <string name="nav_item_tourist_attractions_text">Tourist Attractions</string>
+    <string name="nav_item_tourist_attractions_text">Attractions</string>
     <string name="nav_item_parks_text">Parks</string>
     <string name="nav_item_resorts_text">Resorts</string>
 </resources>
