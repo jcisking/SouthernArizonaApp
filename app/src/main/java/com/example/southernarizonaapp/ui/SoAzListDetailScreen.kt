@@ -210,7 +210,12 @@ fun SoAzNavigationRail(
             NavigationRailItem(
                 selected = navItem.category == currentTab ,
                 onClick = { onTabPressed(navItem.category) },
-                label = { Text(text = stringResource(id = navItem.text))},
+                label = {
+                    Text(
+                        text = stringResource(id = navItem.text),
+                        style = androidx.compose.material.MaterialTheme.typography.button
+                    )
+                },
                 icon = {
                     Icon(painter = painterResource(id = navItem.icon), contentDescription = null)
                 }

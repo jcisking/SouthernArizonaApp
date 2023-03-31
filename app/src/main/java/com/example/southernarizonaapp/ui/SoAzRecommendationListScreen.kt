@@ -66,8 +66,11 @@ fun RecommendationListItem(
         modifier = modifier.fillMaxWidth()
     ) {
         Row() {
-            Image(modifier = Modifier.size(65.dp), painter = painterResource(id = recommendation.image), contentDescription = null)
-            Text(text = recommendation.name)
+            Image(modifier = Modifier.size(80.dp), painter = painterResource(id = recommendation.image), contentDescription = null)
+            Text(
+                text = recommendation.name,
+                style = MaterialTheme.typography.h3
+            )
         }
     }
 

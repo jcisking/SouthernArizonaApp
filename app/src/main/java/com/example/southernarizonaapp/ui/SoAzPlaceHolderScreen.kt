@@ -2,6 +2,7 @@ package com.example.southernarizonaapp.ui
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Card
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -24,13 +25,17 @@ fun SoAzPlaceHolderScreen(
 
         ) {
             Text(
-                text = stringResource(id = R.string.bottom_bar_text_placeholder)
+                text = stringResource(id = R.string.bottom_bar_text_placeholder),
+                style = MaterialTheme.typography.h1
             )
         }
     }
     else {
         Column(modifier = modifier) {
-            Text(text = stringResource(id = R.string.side_bar_text_placeholder))
+            Text(
+                text = stringResource(id = R.string.side_bar_text_placeholder),
+                style = MaterialTheme.typography.h1
+            )
         }
     }
 
