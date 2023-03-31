@@ -6,16 +6,16 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.Button
-import androidx.compose.material.Icon
-import androidx.compose.material.IconButton
-import androidx.compose.material.Text
+import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
 import com.example.southernarizonaapp.R
 import com.example.southernarizonaapp.data.Recommendation
 import com.example.southernarizonaapp.data.local.LocalRecommendationDataProvider
@@ -54,7 +54,7 @@ fun SoAzDetailScreenTopAppBar(
         IconButton(onClick =  onBackButtonPressed ) {
             Icon(imageVector = Icons.Filled.ArrowBack , contentDescription = null)
         }
-        Text(text = recommendation.name)
+        Text(text = recommendation.name, style = MaterialTheme.typography.h1)
     }
 }
 
@@ -77,9 +77,15 @@ fun RecommendationDetailsAndDescription(
     modifier: Modifier = Modifier
 ) {
     Column(modifier = modifier) {
-        Text(text = recommendation.name)
+        Text(
+            text = recommendation.name,
+            style = MaterialTheme.typography.h2,
+            )
         RecommendationLocation(recommendation)
-        Text(text = recommendation.description)
+        Text(
+            text = recommendation.description,
+            style = MaterialTheme.typography.body1
+        )
         DetailScreenButton()
     }
 }
@@ -87,7 +93,10 @@ fun RecommendationDetailsAndDescription(
 @Composable
 fun DetailScreenButton() {
     Button(onClick = { /*TODO*/ }) {
-        Text(text = stringResource(id = R.string.website_button_text))
+        Text(
+            text = stringResource(id = R.string.website_button_text),
+            style = MaterialTheme.typography.button
+        )
     }
 }
 

@@ -11,7 +11,7 @@ import com.example.southernarizonaapp.R
 
 val Barlow = FontFamily(
     Font(R.font.barlow_extra_light, FontWeight.ExtraLight),
-    Font(R.font.barlow_medium, FontWeight.Medium)
+    Font(R.font.barlow_regular, FontWeight.Normal)
 )
 
 val BreeSerif = FontFamily(
@@ -20,6 +20,7 @@ val BreeSerif = FontFamily(
 
 // Set of Material typography styles to start with
 val Typography = Typography(
+    defaultFontFamily = Barlow,
     h1 = TextStyle(
         fontFamily = BreeSerif,
         fontWeight = FontWeight.Normal,
@@ -28,11 +29,11 @@ val Typography = Typography(
     h2 = TextStyle(
         fontFamily = BreeSerif,
         fontWeight = FontWeight.Normal,
-        fontSize = 15.sp
+        fontSize = 17.sp
     ),
     body1 = TextStyle(
         fontFamily = Barlow,
-        fontWeight = FontWeight.Medium,
+        fontWeight = FontWeight.Normal,
         fontSize = 16.sp
     ),
     button = TextStyle(

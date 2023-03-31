@@ -3,6 +3,7 @@ package com.example.southernarizonaapp
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -28,10 +29,13 @@ class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            val windowSizeClass = calculateWindowSizeClass(activity = this)
-            SoAzApp(
-                windowSize = windowSizeClass.widthSizeClass
-            )
+
+            SouthernArizonaAppTheme {
+                val windowSizeClass = calculateWindowSizeClass(activity = this)
+                SoAzApp(
+                    windowSize = windowSizeClass.widthSizeClass
+                )
+            }
         }
     }
 }
