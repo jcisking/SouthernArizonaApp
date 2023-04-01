@@ -1,7 +1,9 @@
 package com.example.southernarizonaapp.ui
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material3.Card
@@ -9,7 +11,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -23,14 +28,21 @@ fun SoAzPlaceHolderScreen(
 ) {
     if (navigationType == SoAzNavigationType.BOTTOM_NAVIGATION) {
         Box (
-            modifier = modifier.background(Color.Red).fillMaxSize(),
+            modifier = modifier
+                .fillMaxSize(),
+//                .background(Color.Green),
             contentAlignment = Alignment.Center
 
         ) {
+            Image(
+                painter = painterResource(id = R.drawable.tucson),
+                modifier = Modifier.graphicsLayer(alpha = .4f),
+                contentDescription = null
+            )
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
-                    .background(Color.Blue)
+//                    .background(Color.Blue)
             ) {
                 Text(
                     text = stringResource(id = R.string.bottom_bar_text_placeholder),
@@ -45,16 +57,26 @@ fun SoAzPlaceHolderScreen(
         }
     }
     else {
-        androidx.compose.material.Card (
+        Box (
+            contentAlignment = Alignment.Center,
             modifier = modifier
                 .fillMaxSize()
-                .wrapContentSize()
         ) {
-            Text(
-                text = stringResource(id = R.string.side_bar_text_placeholder),
-                style = MaterialTheme.typography.h1
+            Image(
+                modifier = Modifier.graphicsLayer(alpha = .4f),
+                painter = painterResource(id = R.drawable.tucson),
+                contentDescription = null
             )
-            Icon(painter = painterResource(id = R.drawable.left_arrow), contentDescription = null)
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(
+                    text = stringResource(id = R.string.side_bar_text_placeholder),
+                    style = MaterialTheme.typography.h1
+                )
+                Icon(
+                    painter = painterResource(id = R.drawable.left_arrow),
+                    contentDescription = null
+                )
+            }
         }
     }
 
