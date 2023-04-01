@@ -101,15 +101,12 @@ fun SoAzContent(
         else {
             Column(
                 modifier = Modifier
-                    .background(Color.Magenta)
-                    .fillMaxSize()
             ) {
                 if (uiState.currentCategory == null) {
                     SoAzPlaceHolderScreen(
                         navigationType = navigationType,
                         modifier = Modifier
                             .weight(1f)
-                            .align(Alignment.CenterHorizontally)
                     )
                 }
                 else {
