@@ -12,6 +12,7 @@ import androidx.compose.ui.modifier.modifierLocalConsumer
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.southernarizonaapp.data.Category
 import com.example.southernarizonaapp.ui.utils.SoAzContentType
 import com.example.southernarizonaapp.ui.utils.SoAzNavigationType
@@ -202,19 +203,24 @@ fun SoAzNavigationRail(
     navItemList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
 ) {
-    NavigationRail(modifier = modifier) {
+    NavigationRail(modifier = modifier.fillMaxHeight()) {
         for (navItem in navItemList) {
             NavigationRailItem(
                 selected = navItem.category == currentTab ,
                 onClick = { onTabPressed(navItem.category) },
                 label = {
                     Text(
+                        fontSize = 12.sp,
                         text = stringResource(id = navItem.text),
                         style = androidx.compose.material.MaterialTheme.typography.button
                     )
                 },
                 icon = {
-                    Icon(painter = painterResource(id = navItem.icon), contentDescription = null)
+                    Icon(
+                        modifier = Modifier.size(30.dp),
+                        painter = painterResource(id = navItem.icon),
+                        contentDescription = null
+                    )
                 }
             )
 

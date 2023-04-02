@@ -18,6 +18,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.southernarizonaapp.data.Recommendation
 import com.example.southernarizonaapp.R
@@ -68,24 +69,24 @@ fun RecommendationListItem(
     Card (
         onClick = { onCardPressed(recommendation) },
         shape = RoundedCornerShape(12.dp),
+        elevation = 2.dp,
         modifier = modifier.padding(vertical = 16.dp, horizontal = 8.dp)
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
-                .fillMaxWidth()
                 .height(85.dp)
                 .padding(8.dp)
         ) {
             Image(
                 modifier = Modifier
+                    .padding(end = 30.dp)
                     .clip(RoundedCornerShape(6.dp)),
-//                    .size(80.dp),
-//                    .fillMaxHeight(),
                 painter = painterResource(id = recommendation.image),
                 contentDescription = null
             )
             Text(
+                modifier = Modifier.weight(1f),
                 text = recommendation.name,
                 style = MaterialTheme.typography.h3
             )
@@ -101,6 +102,8 @@ fun RecommendationListScreenTopBar(
 ) {
     TopAppBar(modifier = modifier) {
         Text(
+            modifier = Modifier.fillMaxWidth(),
+            textAlign = TextAlign.Center,
             text = stringResource(
                 id = R.string.recomm_list_screen_top_bar, uiState.currentCategory!!.displayName
             ),
