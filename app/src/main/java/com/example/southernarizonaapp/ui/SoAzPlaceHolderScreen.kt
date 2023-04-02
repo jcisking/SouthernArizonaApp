@@ -70,7 +70,8 @@ fun SoAzPlaceHolderScreen(
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
                     text = stringResource(id = R.string.side_bar_text_placeholder),
-                    style = MaterialTheme.typography.h1
+                    style = MaterialTheme.typography.h1,
+                    modifier = Modifier.padding(bottom = 35.dp)
                 )
                 Icon(
                     painter = painterResource(id = R.drawable.left_arrow),
