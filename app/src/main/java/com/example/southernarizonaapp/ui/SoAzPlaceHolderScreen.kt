@@ -15,6 +15,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.graphicsLayer
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
@@ -28,21 +29,21 @@ fun SoAzPlaceHolderScreen(
 ) {
     if (navigationType == SoAzNavigationType.BOTTOM_NAVIGATION) {
         Box (
-            modifier = modifier
-                .fillMaxSize(),
-//                .background(Color.Green),
+            modifier = modifier,
+//                .fillMaxSize(),
             contentAlignment = Alignment.Center
 
         ) {
             Image(
                 painter = painterResource(id = R.drawable.tucson),
-                modifier = Modifier.graphicsLayer(alpha = .4f),
+                modifier = Modifier.fillMaxSize().graphicsLayer(alpha = .3f),
+                contentScale = ContentScale.Crop,
                 contentDescription = null
             )
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
                 modifier = Modifier
-//                    .background(Color.Blue)
+                //                    .background(Color.Blue)
             ) {
                 Text(
                     text = stringResource(id = R.string.bottom_bar_text_placeholder),
@@ -54,17 +55,18 @@ fun SoAzPlaceHolderScreen(
                     contentDescription = null
                 )
             }
+
         }
     }
     else {
         Box (
             contentAlignment = Alignment.Center,
             modifier = modifier
-                .fillMaxSize()
         ) {
             Image(
-                modifier = Modifier.graphicsLayer(alpha = .4f),
+                modifier = Modifier.fillMaxSize().graphicsLayer(alpha = .3f),
                 painter = painterResource(id = R.drawable.tucson),
+                contentScale = ContentScale.FillWidth,
                 contentDescription = null
             )
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
