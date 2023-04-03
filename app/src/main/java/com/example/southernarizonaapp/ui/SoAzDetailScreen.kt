@@ -5,12 +5,14 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -74,12 +76,14 @@ fun DetailScreenContent(
         horizontalAlignment = Alignment.CenterHorizontally
             ) {
         Image(
-            modifier = Modifier,
+            modifier = Modifier
+                .padding(bottom = 16.dp)
+                .clip(RoundedCornerShape(6.dp)
+                ),
             painter = painterResource(id = recommendation.image), contentDescription = null
         )
         RecommendationDetailsAndDescription(
-            recommendation = recommendation,
-            modifier = Modifier.padding(bottom = 20.dp)
+            recommendation = recommendation
         )
         DetailScreenButton()
     }
@@ -90,8 +94,9 @@ fun RecommendationDetailsAndDescription(
     recommendation: Recommendation,
     modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier) {
+    Column(modifier = modifier.padding(bottom = 20.dp)) {
         Text(
+            modifier = Modifier.padding(bottom = 8.dp),
             text = recommendation.name,
             style = MaterialTheme.typography.h2,
             )
@@ -118,12 +123,16 @@ fun RecommendationLocation(
     recommendation: Recommendation,
     modifier: Modifier = Modifier
 ) {
-    Row(modifier = modifier) {
+    Row(
+        modifier = modifier
+            .padding(bottom = 20.dp),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
         Icon(
             painter = painterResource(id = R.drawable.baseline_location_on_24),
             contentDescription = null
         )
-        Text(text = recommendation.location, style = MaterialTheme.typography.body1)
+        Text(text = recommendation.location, style = MaterialTheme.typography.h3)
     }
 }
 

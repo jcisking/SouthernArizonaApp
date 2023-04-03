@@ -24,12 +24,12 @@ val Typography = Typography(
     h1 = TextStyle(
         fontFamily = BreeSerif,
         fontWeight = FontWeight.Normal,
-        fontSize = 20.sp
+        fontSize = 21.sp
     ),
     h2 = TextStyle(
         fontFamily = BreeSerif,
         fontWeight = FontWeight.Normal,
-        fontSize = 17.sp
+        fontSize = 19.sp
     ),
     h3 = TextStyle(
         fontFamily = Barlow,
