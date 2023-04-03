@@ -78,8 +78,7 @@ fun DetailScreenContent(
         Image(
             modifier = Modifier
                 .padding(bottom = 16.dp)
-                .clip(RoundedCornerShape(6.dp)
-                ),
+                .clip(RoundedCornerShape(6.dp)),
             painter = painterResource(id = recommendation.image), contentDescription = null
         )
         RecommendationDetailsAndDescription(

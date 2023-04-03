@@ -2,7 +2,14 @@ package com.example.southernarizonaapp.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EE)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+// Dark Colors
+
+val dark_background = Color(0xAA540086)
+val dark_surface = Color(0xAA00857a)
+val dark_onSurface = Color(0xAAf4e4f4)
+
+// Light Colors
+
+val light_background = Color(0xAAe4bce4)
+val light_surface = Color(0xAAade4e2)
+val light_onSurface = Color(0xAA730093)
