@@ -26,8 +26,6 @@ object LocalRecommendationDataProvider {
                     " our story and our food which itself contains years of history through family" +
                     " recipes. \n" +
                     "\n" +
-                    " \n" +
-                    "\n" +
                     "Our Mexican and Seafood plates are authentic while uniquely representing our " +
                     "passion and the love we have for our family. I also incorporated Fusion dishes " +
                     "on the menu which are influenced by the flavors of different cultures that" +

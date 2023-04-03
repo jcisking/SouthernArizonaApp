@@ -31,7 +31,7 @@ fun SoAzDetailScreen(
     BackHandler() {
         onBackButtonPressed()
     }
-    LazyColumn(modifier = modifier.padding(8.dp)) {
+    LazyColumn(modifier = modifier) {
         item {
             SoAzDetailScreenTopAppBar(
                 uiState?.currentRecommendation ?:
@@ -69,11 +69,19 @@ fun DetailScreenContent(
     recommendation: Recommendation,
     modifier: Modifier = Modifier
 ) {
-    Column(modifier = modifier) {
+    Column(
+        modifier = modifier.padding(start = 12.dp, end =  12.dp, bottom = 30.dp ),
+        horizontalAlignment = Alignment.CenterHorizontally
+            ) {
         Image(
+            modifier = Modifier,
             painter = painterResource(id = recommendation.image), contentDescription = null
         )
-        RecommendationDetailsAndDescription(recommendation)
+        RecommendationDetailsAndDescription(
+            recommendation = recommendation,
+            modifier = Modifier.padding(bottom = 20.dp)
+        )
+        DetailScreenButton()
     }
 }
 
@@ -92,7 +100,6 @@ fun RecommendationDetailsAndDescription(
             text = recommendation.description,
             style = MaterialTheme.typography.body1
         )
-        DetailScreenButton()
     }
 }
 
