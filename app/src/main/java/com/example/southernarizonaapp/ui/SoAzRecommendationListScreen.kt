@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -65,15 +66,15 @@ fun RecommendationListItem(
     Card (
         onClick = { onCardPressed(recommendation) },
         shape = RoundedCornerShape(12.dp),
-        elevation = 2.dp,
+        elevation = 0.dp,
         backgroundColor = MaterialTheme.colors.surface,
         modifier = modifier.padding(vertical = 16.dp, horizontal = 8.dp)
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier
-                .height(85.dp)
                 .padding(8.dp)
+                .height(85.dp)
         ) {
             Image(
                 modifier = Modifier
@@ -97,7 +98,11 @@ fun RecommendationListScreenTopBar(
     uiState: SoAzUiState,
     modifier: Modifier = Modifier
 ) {
-    TopAppBar(modifier = modifier) {
+    TopAppBar(
+        modifier = modifier,
+        elevation = 0.dp,
+        backgroundColor = MaterialTheme.colors.background
+    ) {
         Text(
             modifier = Modifier.fillMaxWidth(),
             textAlign = TextAlign.Center,
