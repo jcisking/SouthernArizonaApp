@@ -8,14 +8,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.*
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -47,7 +43,7 @@ fun SoAzRecommendationListScreen(
         }
     ) {
         LazyColumn(
-            modifier = modifier.padding(it)
+            modifier = modifier.padding(it).background(MaterialTheme.colors.background)
         ) {
             items(recommendations) { recommendation ->
                 RecommendationListItem(
@@ -70,6 +66,7 @@ fun RecommendationListItem(
         onClick = { onCardPressed(recommendation) },
         shape = RoundedCornerShape(12.dp),
         elevation = 2.dp,
+        backgroundColor = MaterialTheme.colors.surface,
         modifier = modifier.padding(vertical = 16.dp, horizontal = 8.dp)
     ) {
         Row(
