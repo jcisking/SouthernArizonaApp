@@ -33,7 +33,9 @@ fun SoAzDetailScreen(
     BackHandler() {
         onBackButtonPressed()
     }
-    LazyColumn(modifier = modifier) {
+    LazyColumn(
+        modifier = modifier.background(MaterialTheme.colors.background).fillMaxSize()
+    ) {
         item {
             SoAzDetailScreenTopAppBar(
                 uiState?.currentRecommendation ?:
@@ -72,7 +74,7 @@ fun DetailScreenContent(
     modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier.padding(start = 12.dp, end =  12.dp, bottom = 30.dp ),
+        modifier = modifier.padding(start = 12.dp, end =  12.dp, bottom = 30.dp),
         horizontalAlignment = Alignment.CenterHorizontally
             ) {
         Image(
@@ -95,12 +97,19 @@ fun RecommendationDetailsAndDescription(
 ) {
     Column(modifier = modifier.padding(bottom = 20.dp)) {
         Text(
-            modifier = Modifier.padding(bottom = 8.dp),
+            modifier = Modifier
+                .padding(bottom = 8.dp)
+                .clip(RoundedCornerShape(8.dp))
+                .background(MaterialTheme.colors.surface)
+                .padding(9.dp),
             text = recommendation.name,
             style = MaterialTheme.typography.h2,
             )
         RecommendationLocation(recommendation)
         Text(
+            modifier = Modifier
+                .background(MaterialTheme.colors.surface)
+                .clip(RoundedCornerShape(10.dp)),
             text = recommendation.description,
             style = MaterialTheme.typography.body1
         )
@@ -108,8 +117,13 @@ fun RecommendationDetailsAndDescription(
 }
 
 @Composable
-fun DetailScreenButton() {
-    Button(onClick = { /*TODO*/ }) {
+fun DetailScreenButton(
+    modifier: Modifier = Modifier
+) {
+    Button(
+        modifier = modifier,
+        onClick = { /*TODO*/ }
+    ) {
         Text(
             text = stringResource(id = R.string.website_button_text),
             style = MaterialTheme.typography.button
@@ -124,7 +138,8 @@ fun RecommendationLocation(
 ) {
     Row(
         modifier = modifier
-            .padding(bottom = 20.dp),
+            .padding(bottom = 20.dp)
+            .background(MaterialTheme.colors.surface),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
