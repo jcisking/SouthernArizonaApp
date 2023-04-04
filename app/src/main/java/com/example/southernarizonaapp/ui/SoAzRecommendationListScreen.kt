@@ -109,7 +109,8 @@ fun RecommendationListScreenTopBar(
             text = stringResource(
                 id = R.string.recomm_list_screen_top_bar, uiState.currentCategory!!.displayName
             ),
-            style = MaterialTheme.typography.h1
+            style = MaterialTheme.typography.h1,
+            color = MaterialTheme.colors.onBackground
         )
     }
 }

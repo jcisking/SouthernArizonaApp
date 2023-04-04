@@ -34,7 +34,9 @@ fun SoAzDetailScreen(
         onBackButtonPressed()
     }
     LazyColumn(
-        modifier = modifier.background(MaterialTheme.colors.background).fillMaxSize()
+        modifier = modifier
+            .background(MaterialTheme.colors.background)
+            .fillMaxSize()
     ) {
         item {
             SoAzDetailScreenTopAppBar(
@@ -62,9 +64,17 @@ fun SoAzDetailScreenTopAppBar(
         verticalAlignment = Alignment.CenterVertically
     ) {
         IconButton(onClick = onBackButtonPressed ) {
-            Icon(imageVector = Icons.Filled.ArrowBack , contentDescription = null)
+            Icon(
+                imageVector = Icons.Filled.ArrowBack ,
+                tint = MaterialTheme.colors.onBackground,
+                contentDescription = null)
         }
-        Text(modifier = Modifier.weight(1f),text = recommendation.name, style = MaterialTheme.typography.h1)
+        Text(
+            modifier = Modifier.weight(1f),
+            text = recommendation.name,
+            style = MaterialTheme.typography.h1,
+            color = MaterialTheme.colors.onBackground
+        )
     }
 }
 
@@ -103,13 +113,14 @@ fun RecommendationDetailsAndDescription(
                 .background(MaterialTheme.colors.surface)
                 .padding(9.dp),
             text = recommendation.name,
-            style = MaterialTheme.typography.h2,
+            style = MaterialTheme.typography.h2
             )
         RecommendationLocation(recommendation)
         Text(
             modifier = Modifier
+                .clip(RoundedCornerShape(10.dp))
                 .background(MaterialTheme.colors.surface)
-                .clip(RoundedCornerShape(10.dp)),
+                .padding(15.dp),
             text = recommendation.description,
             style = MaterialTheme.typography.body1
         )
@@ -139,7 +150,9 @@ fun RecommendationLocation(
     Row(
         modifier = modifier
             .padding(bottom = 20.dp)
-            .background(MaterialTheme.colors.surface),
+            .clip(RoundedCornerShape(8.dp))
+            .background(MaterialTheme.colors.surface)
+            .padding(9.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Icon(
