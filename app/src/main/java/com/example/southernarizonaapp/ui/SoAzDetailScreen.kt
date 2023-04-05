@@ -1,6 +1,7 @@
 package com.example.southernarizonaapp.ui
 
 import androidx.activity.compose.BackHandler
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -19,7 +20,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.southernarizonaapp.R
 import com.example.southernarizonaapp.data.Recommendation
 import com.example.southernarizonaapp.data.local.LocalRecommendationDataProvider
@@ -132,12 +135,20 @@ fun DetailScreenButton(
     modifier: Modifier = Modifier
 ) {
     Button(
-        modifier = modifier,
+        elevation = ButtonDefaults.elevation(defaultElevation = 5.dp),
+        contentPadding = PaddingValues(horizontal = 40.dp, vertical = 20.dp),
+        shape = RoundedCornerShape(5.dp),
+        colors = ButtonDefaults.buttonColors(
+            backgroundColor = Color.Black
+        ),
+        border = BorderStroke(2.dp, MaterialTheme.colors.surface),
         onClick = { /*TODO*/ }
     ) {
         Text(
             text = stringResource(id = R.string.website_button_text),
-            style = MaterialTheme.typography.button
+            fontSize = 15.sp,
+            color = Color.White
+//            style = MaterialTheme.typography.button
         )
     }
 }

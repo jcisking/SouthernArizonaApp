@@ -174,7 +174,8 @@ fun SoAzBottomNavigationBar(
     modifier: Modifier = Modifier
 ) {
     NavigationBar(
-        modifier = modifier
+        modifier = modifier,
+        containerColor = androidx.compose.material.MaterialTheme.colors.background
     ) {
         for (navItem in navigationItemList) {
             NavigationBarItem(
@@ -182,15 +183,20 @@ fun SoAzBottomNavigationBar(
                 onClick = {onTabPressed(navItem.category)},
                 label = { Text(
                     text = stringResource(id = navItem.text),
-                    style = androidx.compose.material.MaterialTheme.typography.button
+                    style = androidx.compose.material.MaterialTheme.typography.button,
+                    color = androidx.compose.material.MaterialTheme.colors.onBackground
                 ) },
                 icon = {
                     Icon(
                         modifier = Modifier.size(30.dp),
                         painter = painterResource(id = navItem.icon),
+                        tint = androidx.compose.material.MaterialTheme.colors.onBackground,
                         contentDescription = null
                     )
-                }
+                },
+                colors = NavigationBarItemDefaults.colors(
+                    indicatorColor = androidx.compose.material.MaterialTheme.colors.surface
+                )
             )
         }
     }
@@ -203,7 +209,10 @@ fun SoAzNavigationRail(
     navItemList: List<NavigationItemContent>,
     modifier: Modifier = Modifier
 ) {
-    NavigationRail(modifier = modifier.fillMaxHeight()) {
+    NavigationRail(
+        modifier = modifier.fillMaxHeight(),
+        containerColor = androidx.compose.material.MaterialTheme.colors.background
+    ) {
         for (navItem in navItemList) {
             NavigationRailItem(
                 selected = navItem.category == currentTab ,
@@ -221,7 +230,12 @@ fun SoAzNavigationRail(
                         painter = painterResource(id = navItem.icon),
                         contentDescription = null
                     )
-                }
+                },
+                colors = NavigationRailItemDefaults.colors(
+                    indicatorColor = androidx.compose.material.MaterialTheme.colors.surface,
+                    unselectedIconColor = androidx.compose.material.MaterialTheme.colors.onBackground,
+                    unselectedTextColor = androidx.compose.material.MaterialTheme.colors.onBackground
+                )
             )
 
         }

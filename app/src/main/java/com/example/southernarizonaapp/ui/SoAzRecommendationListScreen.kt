@@ -31,18 +31,7 @@ fun SoAzRecommendationListScreen(
     modifier: Modifier = Modifier
 ) {
     val recommendations = uiState.currentRecommendationList
-//    Scaffold(
-//        topBar = { RecommendationListScreenTopBar(uiState = uiState) },
-//        bottomBar = {
-//            if (navigationType == SoAzNavigationType.BOTTOM_NAVIGATION) {
-//                SoAzBottomNavigationBar(
-//                    currentTab = uiState.currentCategory,
-//                    onTabPressed = onTabPressed,
-//                    navigationItemList = NavigationItemContent.navigationItemContentList
-//                )
-//            }
-//        }
-//    ) {
+
         LazyColumn(
             modifier = modifier
                 .padding(0.dp)
@@ -112,7 +101,6 @@ fun RecommendationListScreenTopBar(
             .padding(vertical = 16.dp),
         horizontalArrangement = Arrangement.Center,
         verticalAlignment = Alignment.CenterVertically
-//        backgroundColor = MaterialTheme.colors.background
     ) {
         Text(
             modifier = Modifier.fillMaxWidth(),
