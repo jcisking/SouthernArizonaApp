@@ -31,21 +31,24 @@ fun SoAzRecommendationListScreen(
     modifier: Modifier = Modifier
 ) {
     val recommendations = uiState.currentRecommendationList
-    Scaffold(
-        topBar = { RecommendationListScreenTopBar(uiState = uiState) },
-        bottomBar = {
-            if (navigationType == SoAzNavigationType.BOTTOM_NAVIGATION) {
-                SoAzBottomNavigationBar(
-                    currentTab = uiState.currentCategory,
-                    onTabPressed = onTabPressed,
-                    navigationItemList = NavigationItemContent.navigationItemContentList
-                )
-            }
-        }
-    ) {
+//    Scaffold(
+//        topBar = { RecommendationListScreenTopBar(uiState = uiState) },
+//        bottomBar = {
+//            if (navigationType == SoAzNavigationType.BOTTOM_NAVIGATION) {
+//                SoAzBottomNavigationBar(
+//                    currentTab = uiState.currentCategory,
+//                    onTabPressed = onTabPressed,
+//                    navigationItemList = NavigationItemContent.navigationItemContentList
+//                )
+//            }
+//        }
+//    ) {
         LazyColumn(
-            modifier = modifier.padding(it).background(MaterialTheme.colors.background)
+            modifier = modifier
+                .padding(0.dp)
+                .background(MaterialTheme.colors.background)
         ) {
+            item { RecommendationListScreenTopBar(uiState = uiState) }
             items(recommendations) { recommendation ->
                 RecommendationListItem(
                     recommendation = recommendation,
@@ -53,7 +56,7 @@ fun SoAzRecommendationListScreen(
                 )
             }
         }
-    }
+//    }
 }
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -68,7 +71,12 @@ fun RecommendationListItem(
         shape = RoundedCornerShape(12.dp),
         elevation = 0.dp,
         backgroundColor = MaterialTheme.colors.surface,
-        modifier = modifier.padding(vertical = 16.dp, horizontal = 8.dp)
+        modifier = modifier
+            .padding(
+                bottom = 32.dp,
+                start = 8.dp,
+                end = 8.dp
+            )
     ) {
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -98,10 +106,13 @@ fun RecommendationListScreenTopBar(
     uiState: SoAzUiState,
     modifier: Modifier = Modifier
 ) {
-    TopAppBar(
-        modifier = modifier,
-        elevation = 0.dp,
-        backgroundColor = MaterialTheme.colors.background
+    Row (
+        modifier = modifier
+            .fillMaxWidth()
+            .padding(vertical = 16.dp),
+        horizontalArrangement = Arrangement.Center,
+        verticalAlignment = Alignment.CenterVertically
+//        backgroundColor = MaterialTheme.colors.background
     ) {
         Text(
             modifier = Modifier.fillMaxWidth(),
