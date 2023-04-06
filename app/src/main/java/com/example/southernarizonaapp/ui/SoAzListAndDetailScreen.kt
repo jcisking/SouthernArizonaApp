@@ -21,12 +21,17 @@ fun SoAzListAndDetailScreen(
             }
             else {
                 SoAzRecommendationListScreen(
+                    modifier = Modifier.weight(1f),
                     uiState = uiState,
                     onTabPressed = onTabPressed,
                     navigationType = navigationType,
                     onRecommendationCardPressed = onRecommendationCardPressed
                 )
             }
-            SoAzDetailScreen(uiState = uiState, onBackButtonPressed = {})
+            SoAzDetailScreen(
+                modifier = Modifier.weight(1f),
+                uiState = uiState,
+                onBackButtonPressed = {}
+            )
         }
 }

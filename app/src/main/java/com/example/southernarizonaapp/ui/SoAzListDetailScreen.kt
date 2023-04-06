@@ -34,7 +34,7 @@ fun SoAzListDetailScreen(
     if (navigationType == SoAzNavigationType.PERMANENT_NAVIGATION_DRAWER) {
         PermanentNavigationDrawer(
             drawerContent = {
-                PermanentDrawerSheet() {
+                PermanentDrawerSheet(modifier = Modifier.width(140.dp)) {
                     NavigationDrawerContent(
                         selectedCategory = uiState.currentCategory,
                         onTabPressed = onTabPressed,
@@ -151,7 +151,7 @@ fun NavigationDrawerContent(
                     )
                 },
                 selected = navItem.category == selectedCategory,
-                onClick = { onTabPressed },
+                onClick = { onTabPressed(navItem.category) },
                 icon = {
                     Icon(
                         painter = painterResource(id = navItem.icon), 
